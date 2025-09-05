@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airam | Portfólio</title>
+  </head>
+
+  <body>
+    <div class="particulas"></div>
+
+    <nav class="navbar">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="menu-link">Início</a>
+        </li>
+        <li>
+          <a href="#sobre" class="menu-link">Sobre</a>
+        </li>
+        <li>
+          <a href="#projetos" class="menu-link">Projetos</a>
+        </li>
+        <li>
+          <a href="#contatos" class="menu-link">Contatos</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="inicio" class="cabecalho">
+      <img
+        src="imagens/foto-perfil.png"
+        alt="Foto de Airam D' Avilla"
+        class="foto-perfil"
+      />
+      <h1>Airam D' Avilla</h1>
+      <p class="cabecalho-sub-titulo">Desenvolvedor Full stack</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre mim</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Olá! Meu nome é Airam D' Avilla, tenho 16 anos, estudo na escola SESI
+          de Osvaldo Cruz, estou fazendo o Curso Técnico do SENAI de D.S e sou
+          um desenvolvedor full stack apaixonado por tecnologia e inovação.
+          Desde cedo, sempre tive interesse em entender como as coisas
+          funcionam, o que me levou a explorar o mundo da programação.
+          Atualmente, estou focado em aprimorar minhas habilidades em
+          desenvolvimento web, tanto no front-end quanto no back-end. Estou
+          sempre em busca de novos desafios e oportunidades para crescer
+          profissionalmente e contribuir com projetos que façam a diferença.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus projetos</h2>
+      <div class="projetos-caixa">
+        <div class="projetos-card">
+          <img
+            src="Captura de tela 2025-09-05 103341.png"
+            alt="Projeto 1"
+            class="projetos-img"
+          />
+          <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">Lading Page AgroSolutio</h3>
+            <p class="paragrafo-projetos">
+              Uma lading page que eu criei no dia que participei do Hackathon
+              2025 Agrotheck. Esse site foi desenvolvido para a aparesentação de
+              uma ideia inovadora. Ajudamos pequenos produtores a tomar decisões
+              melhores no campo, com recomendações simples que aumentam a
+              produtividade e reduzem custos.
+            </p>
+          </div>
+        </div>
+
+        <div class="projetos-card">
+          <img
+            src="Captura de tela 2025-09-05 103059.png"
+            alt="Projeto 2"
+            class="projetos-img"
+          />
+          <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">Formulário Cadastro</h3>
+            <p class="paragrafo-projetos">
+              Um formulário feito na aula do SENAI onde eu criei um formulário
+              como se fosse um cadastro.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Contatos" class="contatos">
+      <h2 class="contatos-titulo">Entre em Contato</h2>
+
+      <form
+        class="formulario-contato"
+        id="formulario"
+        onsubmit="enviarWhatsApp(event)"
+      >
+        <div class="grupo-form">
+          <input
+            placeholder="Seu Nome"
+            class="campo-form"
+            id="nome"
+            type="text"
+          />
+        </div>
+
+        <div class="grupo-form">
+          <textarea
+            class="campo-form"
+            placeholder="Digite sua Mensagem"
+            rows="6"
+            id="mensagem"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="botao-form">Enviar WhatsApp</button>
+      </form>
+    </section>
+
+    <script>
+      function enviarWhatsApp(event) {
+        event.preventDefault();
+        const nome = document.getElementById("nome");
+        const mensagem = document.getElementById("mensagem");
+        const telefone = "5518991651739";
+
+        const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+        const msgFormatada = encodeURIComponent(texto);
+        const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${msgFormatada}`;
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>

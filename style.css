@@ -14,15 +14,14 @@
     --vidro: rgba(255, 255, 255, 0.1);
 }
 
-html {
+html,  body {
     scroll-behavior: smooth;
-}
-
-body {
+    overflow-x: hidden;
     background-color: var(--Escuro);
     color: var(--claro);
-    overflow-y: scroll;
 }
+
+
 
 .navbar {
     position: fixed;
@@ -31,6 +30,7 @@ body {
     z-index: 100;
     top: 0;
     padding: 1.5rem;
+
 }
 
 .menu {

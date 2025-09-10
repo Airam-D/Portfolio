@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 :root {
     --primaria: #4f46E5;
     --secondaria: #7c3aed;
@@ -12,6 +13,7 @@
     --claro: #e2e8f0;
     --vidro: rgba(255, 255, 255, 0.1);
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -19,6 +21,7 @@ html {
 body {
     background-color: var(--Escuro);
     color: var(--claro);
+    overflow-y: scroll;
 }
 
 .navbar {
@@ -51,8 +54,8 @@ body {
     width: 0%;
     position: absolute;
     bottom: 0;
-    left: 0; 
-    background-color: linear-gradient(90deg, var --primaria, var(--secondaria));
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secondaria));
     transition: width 0.5s ease;
 }
 
@@ -97,7 +100,7 @@ h1 {
 
 .sobre-titulo {
     font-size: 3rem;
-    color: car(--claro);
+    color: var(--claro);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -117,6 +120,57 @@ h1 {
     font-size: 1.2rem;
 }
 
+.especialidades {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.especialidades-titulo {
+    font-size: 2.5rem;
+    color: var(--claro);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.especialidades-caixa {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.especialidades-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vidro);
+    padding: 2rem;
+    width: 300px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.especialidades-card:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-10px) scale(1.03);
+    cursor: pointer;
+}
+
+.especialidades-card-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--secondaria);
+}
+
+.especialidades-paragrafo {
+    font-size: 1rem;
+    color: rgba(226, 232, 240, 0.8);
+    line-height: 1.25rem;
+}
+
+
 .projetos {
     padding: 6rem 2rem;
 }
@@ -125,7 +179,6 @@ h1 {
     height: 200px;
     width: 100%;
     object-fit: cover;
-
 }
 
 .projetos-titulo {
@@ -133,6 +186,7 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: 50px;
 }
+
 .projetos-card:hover {
     box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
     transform: translateY(-10px) scale(1.03);
@@ -142,11 +196,11 @@ h1 {
 
 .projetos-caixa {
     display: flex;
-    flex-direction: row;
-    /* grid-template-columns: repeat((auto-fit, minmax(300px, 1fr))); */
+    flex-wrap: wrap; 
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .projetos-card {
@@ -155,21 +209,157 @@ h1 {
     backdrop-filter: blur(10px);
     border: 1px solid var(--vidro);
     overflow: hidden;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+}
+
+.caixa-textos-projetos {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; 
 }
 
 .info-projetos {
     margin-bottom: 5px;
+    text-align: center;
 }
 
 .paragrafo-projetos {
     color: rgba(226, 232, 240, 0.8);
     line-height: 1.25rem;
+    text-align: center;
 }
 
 .caixa-textos-projetos {
     padding: 1.5rem;
 }
 
+
+.atividades {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.atividades-titulo {
+    font-size: 2.5rem;
+    color: var(--claro);
+    margin-bottom: 50px;
+}
+
+.atividades-caixa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.atividades-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vidro);
+    padding: 2rem;
+    width: 500px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.atividades-card:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-10px) scale(1.03);
+    cursor: pointer;
+}
+
+.atividades-card-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--secondaria);
+}
+
+.atividades-paragrafo {
+    font-size: 1.2rem;
+    color: rgba(226, 232, 240, 0.8);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .atividades-caixa {
+        flex-direction: column;
+    }
+}
+
+.hobbies {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.hobbies-titulo {
+    font-size: 2.5rem;
+    color: var(--claro);
+    margin-bottom: 50px;
+}
+
+.hobbies-caixa {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hobbies-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vidro);
+    padding: 2rem;
+    width: 250px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.hobbies-card:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-10px) scale(1.03);
+    cursor: pointer;
+}
+
+.hobbies-icone {
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.hobbies-card-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--claro);
+}
+
+.hobbies-paragrafo {
+    font-size: 1rem;
+    color: rgba(226, 232, 240, 0.8);
+    line-height: 1.25rem;
+}
+
+
+@media (max-width: 768px) {
+    .hobbies-caixa {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hobbies-card {
+        width: 100%;
+    }
+}
 .contatos {
     padding: 6rem 2rem;
     text-align: center;
@@ -195,7 +385,7 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
-.campo-form{
+.campo-form {
     width: 100%;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.05);
@@ -219,13 +409,36 @@ h1 {
     cursor: pointer;
     font-weight: bold;
     width: 100%;
-    transition: all 0.5 ease
+    transition: all 0.5s ease;
 }
 
 .botao-form:hover {
     background: linear-gradient(45deg, var(--secondaria), var(--primaria));
-    box-shadow: 0 5 15px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
     transform: translateY(-4px);
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon {
+    height: 60px;
+    width: 60px;
+    filter: invert(1);
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px var(--primaria));
 }
 
 @keyframes flutuar {
@@ -234,5 +447,16 @@ h1 {
     }
     50% {
         transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .especialidades-caixa {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .especialidades-card {
+        width: 100%;
     }
 }

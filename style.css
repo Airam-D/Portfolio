@@ -434,6 +434,7 @@ h1 {
     height: 60px;
     width: 60px;
     filter: invert(1);
+    color: var(--Escuro);
 }
 
 .social-link:hover {

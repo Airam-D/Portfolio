@@ -24,7 +24,7 @@
           >
         </li>
         <li>
-          <a href="#projetos" class="menu-link">Projetos</a>
+          <a href="projetos.html" class="menu-link">Projetos</a>
         </li>
         <li>
           <a href="contato.html" class="menu-link">Contatos</a>
@@ -40,7 +40,7 @@
       <h1>Airam D' Avilla</h1>
       <p class="cabecalho-sub-titulo">
         <span id="text-to-type"
-          >Desenvolvedor Full stack & Especialis com Automação com IA</span
+          >Desenvolvedor Full stack & Especialista com Automação com IA</span
         >
       </p>
       <script>
@@ -66,7 +66,7 @@
     <section id="projetos" class="projetos">
       <h2 class="projetos-titulo">Meus projetos</h2>
       <div class="projetos-caixa">
-        <div class="projetos-card">
+        <div class="projetos-card" data-project-id="1">
           <a href="https://agrosolutio.vercel.app/" target="_blank">
             <img
               src="Captura de tela 2025-09-05 103341.png"
@@ -88,10 +88,18 @@
               melhores no campo, com recomendações simples que aumentam a
               produtividade e reduzem custos.
             </p>
+            <div class="botoes-projeto">
+              <a
+                href="https://agrosolutio.vercel.app/"
+                target="_blank"
+                class="botao-ver-projeto"
+                >Ver Projeto</a
+              >
+            </div>
           </div>
         </div>
 
-        <div class="projetos-card">
+        <div class="projetos-card" data-project-id="2">
           <a
             href="file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/PBE/Formulario%20Nodejs/public/index.html"
             target="_blank"
@@ -117,10 +125,18 @@
               divertido de fazer. Onde seguimos os passos a passos dos
               professores e eles nos ajudando de forma prática e rápida.
             </p>
+            <div class="botoes-projeto">
+              <a
+                href="projetos.html"
+                target="_blank"
+                class="botao-ver-projeto"
+                >Ver Projeto</a
+              >
+            </div>
           </div>
         </div>
 
-        <div class="projetos-card">
+        <div class="projetos-card" data-project-id="3">
           <a
             href="file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/LIMA/Atividade_site.html/index.html"
             target="_blank"
@@ -143,37 +159,30 @@
               coloquei no lugar do personagem principal e falei sobre ele, suas
               conquistas e seus filmes.
             </p>
-          </div>
-        </div>
-
-        <div class="projetos-card">
-          <a
-            href="file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/Projetos%20Portf%C3%B3lio/Marvel/index.html"
-            target="_blank"
-          >
-            <img
-              src="Captura de tela 2025-09-10 101709.png"
-              alt="Novo Projeto"
-              class="projetos-img"
-            />
-          </a>
-          <div class="caixa-textos-projetos">
-            <h3 class="info-projetos">Marvel slides</h3>
-            <div class="tags-tecnologias">
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS3</span>
-              <span class="tag">JavaScript</span>
+            <div class="botoes-projeto">
+              <a
+                href="file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/LIMA/Atividade_site.html/index.html"
+                target="_blank"
+                class="botao-ver-projeto"
+                >Ver Projeto</a
+              >
             </div>
-            <p class="paragrafo-projetos">
-              Outro projeto feito na aula do SENAI, onde eu criei um site de
-              slides com tema da Marvel. Foi um projeto bem divertido de fazer.
-              Onde seguimos os passos a passos dos professores e eles nos
-              ajudando de forma prática e rápida.
-            </p>
           </div>
         </div>
       </div>
+      <div class="botao-centralizado">
+        <a href="projetos.html" class="botao-ver-todos"
+          >Ver todos os meus projetos</a
+        >
+      </div>
     </section>
+
+    <div id="project-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="modal-project-content" class="modal-project-content"></div>
+      </div>
+    </div>
 
     <section id="sobre" class="sobre">
       <h2 class="sobre-titulo">Sobre mim</h2>
@@ -187,7 +196,7 @@
           Atualmente, estou focado em aprimorar minhas habilidades em
           desenvolvimento web, tanto no front-end quanto no back-end. Estou
           sempre em busca de novos desafios e oportunidades para crescer
-          profissionalmente e contribuir com projetos que façam a diferença.
+          profissionalemente e contribuir com projetos que façam a diferença.
         </p>
       </div>
     </section>
@@ -360,5 +369,85 @@
         </div>
       </div>
     </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+  const projectCards = document.querySelectorAll(".projetos-card");
+  const modal = document.getElementById("project-modal");
+  const modalContent = document.getElementById("modal-project-content");
+  const closeButton = document.querySelector(".close-button");
+
+  const projectData = [
+    {
+      id: "1",
+      imgSrc: "Captura de tela 2025-09-05 103341.png",
+      title: "Lading Page AgroSolutio",
+      tags: ["HTML5", "CSS3", "JavaScript"],
+      description: `Uma lading page que eu criei no dia que participei do Hackathon 2025 Agrotheck. Esse site foi desenvolvido para a aparesentação de uma ideia inovadora. Ajudamos pequenos produtores a tomar decisões melhores no campo, com recomendações simples que aumentam a produtividade e reduzem custos.`,
+      link: "https://agrosolutio.vercel.app/",
+    },
+    {
+      id: "2",
+      imgSrc: "Captura de tela 2025-09-05 103059.png",
+      title: "Formulário Cadastro",
+      tags: ["HTML5", "CSS3", "JavaScript", "Node.js"],
+      description: `Um formulário feito na aula do SENAI onde eu criei um formulário como se fosse um cadastro, onde os dados são enviados para o backend e armazenados em um banco de dados. Foi um projeto bem divertido de fazer. Onde seguimos os passos a passos dos professores e eles nos ajudando de forma prática e rápida.`,
+      link: "file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/PBE/Formulario%20Nodejs/public/index.html",
+    },
+    {
+      id: "3",
+      imgSrc: "Captura de tela 2025-09-10 133631.png",
+      title: "Meu Site",
+      tags: ["HTML5", "CSS3"],
+      description: `Criei este site na aula do SENAI, onde desenvolvi um site para falar sobre um dos meus filmes preferidos que é Carros, onde eu me coloquei no lugar do personagem principal e falei sobre ele, suas conquistas e seus filmes.`,
+      link: "file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/LIMA/Atividade_site.html/index.html",
+    },
+    {
+      id: "4",
+      imgSrc: "Captura de tela 2025-09-10 101709.png",
+      title: "Marvel slides",
+      tags: ["HTML5", "CSS3", "JavaScript"],
+      description: `Outro projeto feito na aula do SENAI, onde eu criei um site de slides com tema da Marvel. Foi um projeto bem divertido de fazer. Onde seguimos os passos a passos dos professores e eles nos ajudando de forma prática e rápida.`,
+      link: "file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/Projetos%20Portf%C3%B3lio/Marvel/index.html",
+    },
+  ];
+
+  projectCards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      e.preventDefault();
+      
+      const projectId = card.dataset.projectId;
+      const project = projectData.find((p) => p.id === projectId);
+
+      if (project) {
+        const tagsHtml = project.tags
+          .map((tag) => `<span class="tag">${tag}</span>`)
+          .join("");
+        modalContent.innerHTML = `
+          <img src="${project.imgSrc}" alt="${project.title}">
+          <h3>${project.title}</h3>
+          <div class="tags-tecnologias">${tagsHtml}</div>
+          <p>${project.description}</p>
+          <div class="botoes-projeto">
+            <a href="${project.link}" target="_blank" class="botao-ver-projeto">Ver Projeto</a>
+          </div>
+        `;
+
+        modal.style.display = "block";
+      }
+    });
+  });
+
+  closeButton.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+    </script>
   </body>
 </html>

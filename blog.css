@@ -1,0 +1,81 @@
+/* Estrutura Geral */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #0d0e15;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header-blog {
+    background-color: #1a1b25;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.nav-blog {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.nav-blog h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.voltar-btn {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.voltar-btn:hover {
+    color: #00ccff;
+}
+
+/* Main Content */
+.main-blog {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.post {
+    background-color: #1a1b25;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-title {
+    font-size: 2em;
+    color: #00aaff;
+    margin-top: 0;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.post-content p {
+    margin-bottom: 1em;
+}
+
+/* Footer */
+.footer-blog {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #333;
+    color: #888;
+    font-size: 0.9em;
+}

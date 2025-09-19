@@ -28,50 +28,49 @@ body {
 }
 
 .botao-voltar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--claro);
-    font-size: 1.25rem;
-    margin: 20px;
-    transition: color 0.3s ease;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--claro);
+  font-size: 1.25rem;
+  margin: 20px;
+  transition: color 0.3s ease;
+  text-align: center;
 }
 
 .botao-voltar:hover {
-    color: var(--escuro);
+  color: var(--escuro);
 }
 
-
 .botao-voltar:hover {
-    box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
-    transform: translateY(-5px);
-    background: linear-gradient(90deg, var(--primaria), var(--secondaria));
-    color: var(--claro);
-    border: 4px solid var(--vidro);
-    border-radius: 8px;
-    width: 100px;
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+  transform: translateY(-5px);
+  background: linear-gradient(90deg, var(--primaria), var(--secondaria));
+  color: var(--claro);
+  border: 4px solid var(--vidro);
+  border-radius: 8px;
+  width: 100px;
 }
 .formulario-contato {
-    text-align: Center;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
-    padding: 2rem;
-    border: 1px solid var(--vidro);
-    border-radius: 16px;
+  text-align: Center;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border: 1px solid var(--vidro);
+  border-radius: 16px;
 }
 .botao-form {
-    margin-top: 20px;
-    border: 4px solid var(--vidro);
-    border-radius: 8px;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: var(--claro);
-    background-color: #7c3aed;
+  margin-top: 20px;
+  border: 4px solid var(--vidro);
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--claro);
+  background-color: #7c3aed;
 }
 .grupo-form {
   margin-bottom: 1.5rem;
@@ -91,7 +90,6 @@ body {
   border-color: var(--primaria);
   box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
 }
-
 
 .social-media {
   display: flex;
@@ -123,4 +121,11 @@ body {
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .formulario-contato {
+    padding: 1rem;
+    margin: 20px;
+  }
 }

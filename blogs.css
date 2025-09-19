@@ -119,3 +119,9 @@ body {
   background-color: var(--primaria);
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

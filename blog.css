@@ -1,4 +1,3 @@
-/* Estrutura Geral */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -8,7 +7,6 @@ body {
     padding: 0;
 }
 
-/* Header */
 .header-blog {
     background-color: #1a1b25;
     padding: 20px;
@@ -40,7 +38,6 @@ body {
     color: #00ccff;
 }
 
-/* Main Content */
 .main-blog {
     max-width: 900px;
     margin: 20px auto;
@@ -71,11 +68,35 @@ body {
     margin-bottom: 1em;
 }
 
-/* Footer */
 .footer-blog {
     text-align: center;
     padding: 20px;
     border-top: 1px solid #333;
     color: #888;
     font-size: 0.9em;
+}
+
+.botao-voltar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--claro);
+    font-size: 1.25rem;
+    margin: 20px;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.botao-voltar:hover {
+    color: var(--escuro);
+}
+.botao-voltar:hover {
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+    transform: translateY(-5px);
+    background: linear-gradient(90deg, var(--primaria), var(--secondaria));
+    color: var(--claro);
+    border: 4px solid var(--vidro);
+    border-radius: 8px;
+    width: 100px;
 }

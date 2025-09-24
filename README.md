@@ -1,4 +1,4 @@
-# Meu Portfólio Pessoal 💼
+# Meu Portfólio Pessoal 💼 
 
 Uma plataforma para exibir meu trabalho, projetos e habilidades como desenvolvedor. Este portfólio serve como um cartão de visitas digital e demonstra minhas competências em JavaSript, CSS e HTML5, e ampliarei meu conhecimento futuramente.
 
@@ -13,8 +13,7 @@ Confira a versão online do meu portfólio: (https://airamdavilla.vercel.app/)
 * **Design Responsivo:** O layout se adapta perfeitamente a diferentes tamanhos de tela (desktop, tablet, celular).
 * **Seção de Projetos:** Exibe meus trabalhos mais relevantes com descrições e links.
 * **Sobre Mim:** Apresenta minha trajetória e experiência acadêmica e futuramente profissional.
-* **Formulário de Contato:** Permite que interessados entrem em contato diretamente comigo.
-
+* **Formulário de Contato:** Permite que interessados entrem em contato comigo diretamente.
 ---
 
 ### Tecnologias Utilizadas 💻

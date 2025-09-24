@@ -13,7 +13,8 @@ Confira a versão online do meu portfólio: (https://airamdavilla.vercel.app/)
 * **Design Responsivo:** O layout se adapta perfeitamente a diferentes tamanhos de tela (desktop, tablet, celular).
 * **Seção de Projetos:** Exibe meus trabalhos mais relevantes com descrições e links.
 * **Sobre Mim:** Apresenta minha trajetória e experiência acadêmica e futuramente profissional.
-* **Formulário de Contato:** Permite que interessados entrem em contato comigo diretamente.
+* **Formulário de Contato:** Permite que entrem em contato comigo diretamente.
+
 ---
 
 ### Tecnologias Utilizadas 💻
@@ -51,5 +52,5 @@ Confira a versão online do meu portfólio: (https://airamdavilla.vercel.app/)
 
 Para mais informações, sinta-se à vontade para me contatar através de: 
 
-GitHub: (https://github.com/Airam-D)
-Linkedin: (https://www.linkedin.com/in/airam-davilla-94551a382/).
+GitHub: https://github.com/Airam-D
+Linkedin: https://www.linkedin.com/in/airam-davilla-94551a382/

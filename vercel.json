@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/blog1",
+      "destination": "/blog1.html"
+    },
+    {
+      "source": "/blogs",
+      "destination": "/blogs.html"
+    },
+    {
       "source": "/contato",
       "destination": "/contato.html"
     },
@@ -9,12 +17,12 @@
       "destination": "/projetos.html"
     },
     {
-      "source": "/blogs",
-      "destination": "/blogs.html"
+      "source": "/",
+      "destination": "/index.html"
     },
     {
-      "source": "/blog1",
-      "destination": "/blog1.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

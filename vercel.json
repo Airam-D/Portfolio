@@ -1,8 +1,20 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/contato",
+      "destination": "/contato.html"
+    },
+    {
+      "source": "/projetos",
+      "destination": "/projetos.html"
+    },
+    {
+      "source": "/blogs",
+      "destination": "/blogs.html"
+    },
+    {
+      "source": "/blog1",
+      "destination": "/blog1.html"
     }
   ]
 }

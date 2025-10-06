@@ -1,357 +1,285 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airam | Portfólio</title>
+    <link rel="icon" type="image/png" href="ícone_portfolio.png" />
+    <link rel="contato" href="contato.html" />
+  </head>
 
-<head>
-  <link rel="stylesheet" href="style.css" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Airam | Portfólio</title>
-  <link rel="icon" type="image/png" href="ícone_portfolio.png" />
-  <link rel="contato" href="contato.html" />
-</head>
-
-<body>
-  <nav class="navbar">
-    <ul class="menu">
-      <li>
-        <a href="projetos" class="menu-link">Projetos</a>
-      </li>
-      <li>
-        <a href="contato" class="menu-link">Contato</a>
-      </li>
-      <li>
-        <a href="blogs" class="menu-link">Blogs</a>
-      </li>
-    </ul>
-  </nav>
-  <main id="inicio" class="cabecalho">
-    <img src="Capturas de tela/foto-perfil.png" alt="Foto de Airam D' Avilla" class="foto-perfil" />
-    <h1>Airam D' Avilla</h1>
-    <p class="cabecalho-sub-titulo" id="text-to-type">
-      <span id="text-to-type">Desenvolvedor Full stack & Especialista com Automação com IA</span>
-    </p>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const textElement = document.getElementById("text-to-type");
-        const textToType = textElement.textContent;
-        textElement.textContent = "";
-        let i = 0;
-
-        function typeWriter() {
-          if (i < textToType.length) {
-            textElement.textContent += textToType.charAt(i);
-            i++;
-            setTimeout(typeWriter, 50);
-          }
-        }
-
-        typeWriter();
-      });
-    </script>
-    <a href="contato" class="botao-contato"> Entre em Contato</a>
-  </main>
-  <section id="projetos" class="projetos">
-    <h2 class="projetos-titulo">Meus projetos</h2>
-    <div class="projetos-caixa">
-      <div class="projetos-card" data-project-id="1">
-        <a href="https://agrosolutio.vercel.app/" target="_blank">
-          <img src="Capturas de tela/Agro solutio.png" alt="Projeto 1" class="projetos-img" />
-        </a>
-        <div class="caixa-textos-projetos">
-          <h3 class="info-projetos">Lading Page AgroSolutio</h3>
-          <div class="tags-tecnologias">
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">JavaScript</span>
-          </div>
-          <p class="paragrafo-projetos">
-            Uma lading page que eu criei no dia que participei do Hackathon
-            2025 Agrotheck. Esse site foi desenvolvido para a aparesentação de
-            uma ideia inovadora. Ajudamos pequenos produtores a tomar decisões
-            melhores no campo, com recomendações simples que aumentam a
-            produtividade e reduzem custos.
-          </p>
-          <div class="botoes-projeto">
-            <a href="https://agrosolutio.vercel.app/" target="_blank" class="botao-ver-projeto">Ver Projeto</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="projetos-card" data-project-id="2">
-        <a href="file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/PBE/Formulario%20Nodejs/public/index.html"
-          target="_blank">
-          <img src="Capturas de tela/Formulario.png" alt="Projeto 2" class="projetos-img" />
-        </a>
-        <div class="caixa-textos-projetos">
-          <h3 class="info-projetos">Formulário Cadastro</h3>
-          <div class="tags-tecnologias">
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Node.js</span>
-          </div>
-          <p class="paragrafo-projetos">
-            Um formulário feito na aula do SENAI onde eu criei um formulário
-            como se fosse um cadastro, onde os dados são enviados para o
-            backend e armazenados em um banco de dados. Foi um projeto bem
-            divertido de fazer. Onde seguimos os passos a passos dos
-            professores e eles nos ajudando de forma prática e rápida.
-          </p>
-          <div class="botoes-projeto">
-            <a href="projetos" target="_blank" class="botao-ver-projeto">Ver Projeto</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="projetos-card" data-project-id="3">
-        <a href="file:///C:/Users/Aluno%201%20DEV/OneDrive%20-%20SESISENAISP%20-%20Escolas/Mundo%20Pet%20Feliz/index.html"
-          target="_blank">
-          <img src="Capturas de tela/Calculadora Web.png" alt="Meu site" class="projetos-img" />
-        </a>
-        <div class="caixa-textos-projetos">
-          <h3 class="info-projetos">Calculadora Web</h3>
-          <div class="tags-tecnologias">
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Math.js</span>
-          </div>
-          <p class="paragrafo-projetos">
-            Uma calculadora web simples que criei para facilitar cálculos
-            rápidos. A interface é intuitiva e responsiva, permitindo que os
-            usuários realizem operações matemáticas básicas com facilidade.
-            Ideal para estudantes e profissionais que precisam de uma
-            ferramenta prática para cálculos do dia a dia. Além disso também
-            tem a opção de mduar para a calculadora científica.
-          </p>
-          <div class="botoes-projeto">
-            <a href="https://calculadora-web-cientifica.vercel.app/" target="_blank" class="botao-ver-projeto">Ver
-              Projeto</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="botao-centralizado">
-      <a href="projetos" class="botao-ver-todos">Ver todos os meus projetos</a>
-    </div>
-  </section>
-
-  <div id="project-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-button">&times;</span>
-      <div id="modal-project-content" class="modal-project-content"></div>
-    </div>
-  </div>
-
-  <section id="sobre" class="sobre">
-    <h2 class="sobre-titulo">Sobre mim</h2>
-    <div class="sobre-caixa">
-      <p class="sobre-paragrafo">
-        Olá! Meu nome é Airam D' Avilla, tenho 16 anos, estudo na escola SESI
-        de Osvaldo Cruz, estou fazendo o Curso Técnico do SENAI de D.S e sou
-        um desenvolvedor full stack apaixonado por tecnologia e inovação.
-        Desde cedo, sempre tive interesse em entender como as coisas
-        funcionam, o que me levou a explorar o mundo da programação.
-        Atualmente, estou focado em aprimorar minhas habilidades em
-        desenvolvimento web, tanto no front-end quanto no back-end. Estou
-        sempre em busca de novos desafios e oportunidades para crescer
-        profissionalemente e contribuir com projetos que façam a diferença.
+  <body>
+    <nav class="navbar">
+      <ul class="menu">
+        <li>
+          <a href="projetos" class="menu-link">Projetos</a>
+        </li>
+        <li>
+          <a href="contato" class="menu-link">Contato</a>
+        </li>
+        <li>
+          <a href="blogs" class="menu-link">Blogs</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="inicio" class="cabecalho">
+      <img
+        src="Capturas de tela/foto-perfil.png"
+        alt="Foto de Airam D' Avilla"
+        class="foto-perfil"
+      />
+      <h1>Airam D' Avilla</h1>
+      <p class="cabecalho-sub-titulo" id="text-to-type">
+        <span id="text-to-type"
+          >Desenvolvedor Full stack & Especialista com Automação com IA</span
+        >
       </p>
-    </div>
-  </section>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const textElement = document.getElementById("text-to-type");
+          const textToType = textElement.textContent;
+          textElement.textContent = "";
+          let i = 0;
 
-  <section id="especialidades" class="especialidades">
-    <h2 class="especialidades-titulo">Minhas Especialidades</h2>
-    <div class="especialidades-caixa">
-      <div class="especialidades-card">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-filetype-html"
-          viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M14 4.5V11h-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zm-9.736 7.35v3.999h-.791v-1.714H1.79v1.714H1V11.85h.791v1.626h1.682V11.85h.79Zm2.251.662v3.337h-.794v-3.337H4.588v-.662h3.064v.662zm2.176 3.337v-2.66h.038l.952 2.159h.516l.946-2.16h.038v2.661h.715V11.85h-.8l-1.14 2.596H9.93L8.79 11.85h-.805v3.999zm4.71-.674h1.696v.674H12.61V11.85h.79v3.325Z" />
-        </svg>
-        <h3 class="especialidades-card-titulo">HTML</h3>
-        <p class="especialidades-paragrafo">
-          Consigo criar estruturas de páginas web acessíveis. Tenho
-          proficiência em HTML5 para organizar e apresentar o conteúdo de
-          forma clara e eficiente.
-        </p>
-      </div>
-      <div class="especialidades-card">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-css"
-          viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V0zM4.59 7.498q-.908 0-1.455.508-.547.507-.547 1.484v3.106q0 .986.527 1.484t1.406.498q.576 0 1.016-.224.45-.225.703-.674.255-.45.254-1.114v-.185h-1.22v.176q0 .449-.186.683t-.527.235q-.372-.01-.557-.264-.186-.255-.186-.752V9.686q0-.547.166-.811.177-.264.577-.264.321 0 .517.225.195.224.195.693v.205h1.23V9.52q0-.674-.243-1.124a1.55 1.55 0 0 0-.664-.673q-.42-.225-1.006-.225m4.214-.01q-.586 0-1.006.244a1.67 1.67 0 0 0-.635.674 2.1 2.1 0 0 0-.225.996q0 .753.293 1.182.304.42.967.732l.469.215q.44.186.625.43.186.244.186.635 0 .478-.166.703-.157.224-.528.224-.36 0-.547-.244-.185-.243-.205-.752H6.87q.02.996.498 1.524.479.527 1.387.527t1.416-.518.508-1.484q0-.81-.332-1.289-.333-.479-1.045-.79l-.45-.196q-.39-.166-.556-.381-.165-.214-.166-.576 0-.4.166-.596.175-.195.508-.195.36 0 .508.234.156.234.175.703h1.123q-.03-.976-.498-1.484-.468-.518-1.308-.518m4.057 0q-.585 0-1.006.244a1.67 1.67 0 0 0-.634.674 2.1 2.1 0 0 0-.225.996q0 .753.293 1.182.303.42.967.732l.469.215q.438.186.625.43.185.244.185.635 0 .478-.166.703-.156.224-.527.224-.361.001-.547-.244-.186-.243-.205-.752h-1.162q.02.996.498 1.524.479.527 1.386.527t1.417-.518.507-1.484q0-.81-.332-1.289t-1.045-.79l-.449-.196q-.39-.166-.556-.381-.166-.214-.166-.576 0-.4.165-.596.177-.195.508-.195.361 0 .508.234.156.234.176.703h1.123q-.03-.976-.498-1.484-.47-.518-1.309-.518" />
-        </svg>
-        <h3 class="especialidades-card-titulo">CSS</h3>
-        <p class="especialidades-paragrafo">
-          Desenvolvo layouts modernos e responsivos usando Flexbox e CSS Grid.
-          Tenho habilidades em animações, transições e pré-processadores.
-        </p>
-      </div>
-      <div class="especialidades-card">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-javascript"
-          viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM9.053 7.596v3.127l-.007 1.752q0 .498-.186.752t-.556.263q-.342 0-.528-.234-.185-.234-.185-.684v-.175H6.37v.185q0 .665.253 1.113.255.45.703.674.44.225 1.016.225.88 0 1.406-.498.527-.498.527-1.485l.007-1.752V7.596zm3.808-.108q-.585 0-1.006.244a1.67 1.67 0 0 0-.634.674 2.1 2.1 0 0 0-.225.996q0 .753.293 1.182.303.42.967.732l.469.215q.438.186.625.43.185.244.185.635 0 .478-.166.703-.156.224-.527.224-.361.001-.547-.244-.186-.243-.205-.752h-1.162q.02.996.498 1.524.479.527 1.386.527.909 0 1.417-.518.507-.517.507-1.484 0-.81-.332-1.289t-1.045-.79l-.449-.196q-.39-.166-.556-.381-.166-.214-.166-.576 0-.4.165-.596.177-.195.508-.195.361 0 .508.234.156.234.176.703h1.123q-.03-.976-.498-1.484-.47-.518-1.309-.518" />
-        </svg>
-        <h3 class="especialidades-card-titulo">JavaScript</h3>
-        <p class="especialidades-paragrafo">
-          Pouco experiente em JavaScript, mas tenho conhecimentos básicos na
-          linguagem. Estou sempre buscando aprender mais e aprimorar minhas
-          habilidades.
-        </p>
-      </div>
-    </div>
-  </section>
+          function typeWriter() {
+            if (i < textToType.length) {
+              textElement.textContent += textToType.charAt(i);
+              i++;
+              setTimeout(typeWriter, 50);
+            }
+          }
 
-  <section id="atividades-extracurriculares" class="atividades">
-    <h2 class="atividades-titulo">Atividades Extracurriculares</h2>
-    <div class="atividades-caixa">
-      <div class="atividades-card">
-        <h3 class="atividades-card-titulo">Hackathon 2025 Agrotheck</h3>
-        <p class="atividades-paragrafo">
-          Participei do Hackathon 2025 Agrotheck e ficamos em 2º lugar!
-          Desenvolvemos uma solução inovadora para ajudar pequenos produtores
-          a tomar melhores decisões no campo, aumentando a produtividade e
-          reduzindo custos.
-          <a href="blogs" class="botao-saiba-mais">Saiba mais</a>
-        </p>
-      </div>
-    </div>
-  </section>
-  <section id="depoimentos" class="depoimentos">
-    <h2 class="depoimentos-titulo">O que dizem sobre mim?</h2>
-    <div class="depoimentos-caixa">
-      <div class="depoimentos-card">
-        <img src="Foto do Wagner.png" alt="FOTO DA PESSOA" class="depoimentos-img" />
-        <p class="depoimentos-paragrafo">
-          "O Airam é um aluno muito dedicado, curioso e inteligente. Ele está
-          sempre buscando conhecimento e demonstra isso ao trazer perguntas
-          perspicazes e sensatas. Sua participação em nossa equipe no
-          Hackathon foi excelente, pois ele esteve constantemente procurando
-          soluções e trazendo novas ideias para os desafios que enfrentamos,
-          além de contribuir de várias outras formas com o time"
-        </p>
-        <h3 class="depoimentos-nome">Wagner Sabor</h3>
-        <p class="depoimentos-cargo">Mentoria & Educação</p>
-      </div>
+          typeWriter();
+        });
+      </script>
+      <a href="contato" class="botao-contato"> Entre em Contato</a>
+    </main>
+    <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus projetos</h2>
+      <div class="projetos-caixa">
+        <div class="projetos-card" data-project-id="1">
+          <a href="https://agrosolutio.vercel.app/" target="_blank">
+            <img
+              src="Capturas de tela/Agro solutio.png"
+              alt="Projeto 1"
+              class="projetos-img"
+            />
+          </a>
+          <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">Landing Page AgroSolutio</h3>
+            <div class="tags-tecnologias">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <p class="paragrafo-projetos">
+              Uma landing page que eu criei no dia que participei do Hackathon
+              2025 Agrotheck. Esse site foi desenvolvido para a apresentação de
+              uma ideia inovadora. Ajudamos pequenos produtores a tomar decisões
+              melhores no campo, com recomendações simples que aumentam a
+              produtividade e reduzem custos.
+            </p>
+            <div class="botoes-projeto">
+              <a
+                href="https://agrosolutio.vercel.app/"
+                target="_blank"
+                class="botao-ver-projeto"
+                >Ver Projeto</a
+              >
+            </div>
+          </div>
+        </div>
 
-      <div class="depoimentos-card">
-        <img src="Foto do Vini.png " alt="Outra foto de perfil" class="depoimentos-img" />
-        <p class="depoimentos-paragrafo"></p>
-        <p class="depoimentos-paragrafo">
-          "O Airam é um profissional muito dedicado, sempre empenhado em dar o
-          melhor em cada projeto que assume. Sua maior qualidade é a vontade
-          constante de aprender e evoluir, seja por meio do nosso curso ou até
-          mesmo estudando de forma autônoma, como em vídeos e pesquisas. Essa
-          determinação reflete diretamente nos seus resultados, que se
-          destacam pela qualidade, cuidado e profissionalismo."
-        </p>
-        <h3 class="depoimentos-nome">Vinicius de Oliveira</h3>
-        <p class="depoimentos-cargo">Desenvolvedor Full Stack</p>
-      </div>
-    </div>
-  </section>
+        <div class="projetos-card" data-project-id="2">
+          <a
+            href="file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/PBE/Formulario%20Nodejs/public/index.html"
+            target="_blank"
+          >
+            <img
+              src="Capturas de tela/Formulario.png"
+              alt="Projeto 2"
+              class="projetos-img"
+            />
+          </a>
+          <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">Formulário Cadastro</h3>
+            <div class="tags-tecnologias">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Node.js</span>
+            </div>
+            <p class="paragrafo-projetos">
+              Um formulário feito na aula do SENAI onde eu criei um formulário
+              como se fosse um cadastro, onde os dados são enviados para o
+              backend e armazenados em um banco de dados. Foi um projeto bem
+              divertido de fazer. Onde seguimos os passos a passos dos
+              professores e eles nos ajudando de forma prática e rápida.
+            </p>
+            <div class="botoes-projeto">
+              <a href="projetos" target="_blank" class="botao-ver-projeto"
+                >Ver Projeto</a
+              >
+            </div>
+          </div>
+        </div>
 
-  <section id="hobbies" class="hobbies">
-    <h2 class="hobbies-titulo">Meus Hobbies</h2>
-    <div class="hobbies-caixa">
-      <div class="hobbies-card">
-        <h3 class="hobbies-card-titulo">Vôlei</h3>
-        <p class="hobbies-paragrafo">
-          Meu esporte favorito é o vôlei. Adoro a dinâmica do jogo, a
-          colaboração em equipe e a emoção de cada partida. Além disso é muito
-          gratificante saber que minha equipe/time sempre estará ao meu lado e
-          acho que isso tambem serviria como ajuda no meu ambiente de trabalho
-          no futuro. Já joguei vários campeonatos como ae super copa paulista
-          e em umas dessas eu ganhei um MVP, mostrando para mim mesmo que eu
-          tenho capacidade de alcançar aquilo qwue tenho vontade, hoje em dia
-          busco melhorar ainda mais as minhashabilidsades.
-        </p>
-      </div>
-      <div class="hobbies-card">
-        <h3 class="hobbies-card-titulo">Tênis de Mesa</h3>
-        <p class="hobbies-paragrafo">
-          Outro hobby que eu gosto muito é jogar tênis de mesa. É um esporte
-          que exige rapidez, precisão e estratégia. Gosto de praticar com
-          amigos e participar de torneios locais. Mas hoje em dia estou mais
-          focado no vôlei e principalmente na área de programação. Já joguei
-          um campeonato que foi aqui na minha cidade e fiquei em 3º lugar.
-        </p>
-      </div>
-      <div class="hobbies-card">
-        <h3 class="hobbies-card-titulo">Futebol</h3>
-        <p class="hobbies-paragrafo">
-          Um esporte que eu gosto muito é futebol também. Já treinei em um
-          Centro de treinamento da minha cidade, mas hoje em dia jogo mais nos
-          fins de semana com meus amigos. Fazer as coisas com os amigos,
-          principalmente o que gosta, torna aquilo mais incrivel para aquela
-          pessoa. Nunca joguei um campeonato de fato.
-        </p>
-      </div>
-      <div class="hobbies-card">
-        <h3 class="hobbies-card-titulo">Basquete</h3>
-        <p class="hobbies-paragrafo">
-          O basquete é um esporte onde não estou muito ligado hoje em dia, só
-          jogo se precisar na Educação Física. Mas mesmo assim é um esporte
-          legal de se praticar, onde é necessário muita agilidade e rapidez.
-          Nunca cheguei a jogar um campeonato de fato.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const projectCards = document.querySelectorAll(".projetos-card");
-      const modal = document.getElementById("project-modal");
-      const modalContent = document.getElementById("modal-project-content");
-      const closeButton = document.querySelector(".close-button");
-
-      const projectData = [
-        {
-          id: "1",
-          imgSrc: "Capturas de tela/Agro solutio.png",
-          title: "Lading Page AgroSolutio",
-          tags: ["HTML5", "CSS3", "JavaScript"],
-          description: `Uma lading page que eu criei no dia que participei do Hackathon 2025 Agrotheck. Esse site foi desenvolvido para a aparesentação de uma ideia inovadora. Ajudamos pequenos produtores a tomar decisões melhores no campo, com recomendações simples que aumentam a produtividade e reduzem custos.`,
-          link: "https://agrosolutio.vercel.app/",
-        },
-        {
-          id: "2",
-          imgSrc: "Captura de tela/Formulario.png",
-          title: "Formulário Cadastro",
-          tags: ["HTML5", "CSS3", "JavaScript", "Node.js"],
-          description: `Um formulário feito na aula do SENAI onde eu criei um formulário como se fosse um cadastro, onde os dados são enviados para o backend e armazenados em um banco de dados. Foi um projeto bem divertido de fazer. Onde seguimos os passos a passos dos professores e eles nos ajudando de forma prática e rápida.`,
-          link: "file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/PBE/Formulario%20Nodejs/public/index.html",
-        },
-        {
-          id: "3",
-          imgSrc: "Capturas de tela/Calculadora Web.png",
-          title: "Calculadora Web",
-          tags: ["HTML5", "CSS3", "JavaScript, Math.js"],
-          description: `Uma calculadora web simples que criei para facilitar cálculos
+        <div class="projetos-card" data-project-id="3">
+          <a
+            href="file:///C:/Users/Aluno%201%20DEV/OneDrive%20-%20SESISENAISP%20-%20Escolas/Mundo%20Pet%20Feliz/index.html"
+            target="_blank"
+          >
+            <img
+              src="Capturas de tela/Calculadora Web.png"
+              alt="Meu site"
+              class="projetos-img"
+            />
+          </a>
+          <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">Calculadora Web</h3>
+            <div class="tags-tecnologias">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Math.js</span>
+            </div>
+            <p class="paragrafo-projetos">
+              Uma calculadora web simples que criei para facilitar cálculos
               rápidos. A interface é intuitiva e responsiva, permitindo que os
               usuários realizem operações matemáticas básicas com facilidade.
               Ideal para estudantes e profissionais que precisam de uma
               ferramenta prática para cálculos do dia a dia. Além disso também
-              tem a opção de mduar para a calculadora científica.`,
-          link: "https://calculadora-web-cientifica.vercel.app/",
-        },
-      ];
+              tem a opção de mudar para a calculadora científica.
+            </p>
+            <div class="botoes-projeto">
+              <a
+                href="https://calculadora-web-cientifica.vercel.app/"
+                target="_blank"
+                class="botao-ver-projeto"
+                >Ver Projeto</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="botao-centralizado">
+        <a href="projetos" class="botao-ver-todos"
+          >Ver todos os meus projetos</a
+        >
+      </div>
+    </section>
+    <div id="project-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="modal-project-content" class="modal-project-content"></div>
+      </div>
+    </div>
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre mim</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Olá! Meu nome é Airam D' Avilla, tenho 16 anos, estudo na escola SESI
+          de Osvaldo Cruz, estou fazendo o Curso Técnico do SENAI de D.S e sou
+          um desenvolvedor full stack apaixonado por tecnologia e inovação.
+          Desde cedo, sempre tive interesse em entender como as coisas
+          funcionam, o que me levou a explorar o mundo da programação.
+          Atualmente, estou focado em aprimorar minhas habilidades em
+          desenvolvimento web, tanto no front-end quanto no back-end. Estou
+          sempre em busca de novos desafios e oportunidades para crescer
+          profissionalmente e contribuir com projetos que façam a diferença.
+        </p>
+      </div>
+    </section>
+    <section id="especialidades" class="especialidades">
+      <h2 class="especialidades-titulo">Minhas Especialidades</h2>
+      <div class="especialidades-caixa">
+        <div class="especialidades-card">
+          <h3 class="especialidades-card-titulo">Desenvolvimento Web</h3>
+          <p class="especialidades-paragrafo">
+            Crio sites e aplicações web completas, do front-end ao back-end, com
+            foco em performance e experiência do usuário.
+          </p>
+        </div>
+        <div class="especialidades-card">
+          <h3 class="especialidades-card-titulo">Automação com IA</h3>
+          <p class="especialidades-paragrafo">
+            Desenvolvo soluções de automação com inteligência artificial para
+            otimizar processos e aumentar a eficiência.
+          </p>
+        </div>
+        <div class="especialidades-card">
+          <h3 class="especialidades-card-titulo">Design Responsivo</h3>
+          <p class="especialidades-paragrafo">
+            Garanto que suas aplicações funcionem perfeitamente em qualquer
+            dispositivo, seja desktop, tablet ou smartphone.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      projectCards.forEach((card) => {
-        card.addEventListener("click", (e) => {
-          e.preventDefault();
+    <footer class="rodape">
+      <p>&copy; 2024 Airam D' Avilla. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const projectCards = document.querySelectorAll(".projetos-card");
+        const modal = document.getElementById("project-modal");
+        const modalContent = document.getElementById("modal-project-content");
+        const closeButton = document.querySelector(".close-button");
 
-          const projectId = card.dataset.projectId;
-          const project = projectData.find((p) => p.id === projectId);
+        const projectData = [
+          {
+            id: "1",
+            imgSrc: "Capturas de tela/Agro solutio.png",
+            title: "Landing Page AgroSolutio",
+            tags: ["HTML5", "CSS3", "JavaScript"],
+            description: `Uma landing page que eu criei no dia que participei do Hackathon
+            2025 Agrotheck. Esse site foi desenvolvido para a apresentação de
+            uma ideia inovadora. Ajudamos pequenos produtores a tomar decisões
+            melhores no campo, com recomendações simples que aumentam a
+            produtividade e reduzem custos.`,
+            link: "https://agrosolutio.vercel.app/",
+          },
+          {
+            id: "2",
+            imgSrc: "Capturas de tela/Formulario.png",
+            title: "Formulário Cadastro",
+            tags: ["HTML5", "CSS3", "JavaScript", "Node.js"],
+            description: `Um formulário feito na aula do SENAI onde eu criei um formulário
+            como se fosse um cadastro, onde os dados são enviados para o
+            backend e armazenados em um banco de dados. Foi um projeto bem
+            divertido de fazer. Onde seguimos os passos a passos dos
+            professores e eles nos ajudando de forma prática e rápida.`,
+            link: "file:///C:/Users/airam/OneDrive%20-%20SESISENAISP%20-%20Escolas/PBE/Formulario%20Nodejs/public/index.html",
+          },
+          {
+            id: "3",
+            imgSrc: "Capturas de tela/Calculadora Web.png",
+            title: "Calculadora Web",
+            tags: ["HTML5", "CSS3", "JavaScript", "Math.js"],
+            description: `Uma calculadora web simples que criei para facilitar cálculos
+            rápidos. A interface é intuitiva e responsiva, permitindo que os
+            usuários realizem operações matemáticas básicas com facilidade.
+            Ideal para estudantes e profissionais que precisam de uma
+            ferramenta prática para cálculos do dia a dia. Além disso também
+            tem a opção de mudar para a calculadora científica.`,
+            link: "https://calculadora-web-cientifica.vercel.app/",
+          },
+        ];
 
-          if (project) {
-            const tagsHtml = project.tags
-              .map((tag) => `<span class="tag">${tag}</span>`)
-              .join("");
-            modalContent.innerHTML = `
+        projectCards.forEach((card) => {
+          card.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const projectId = card.dataset.projectId;
+            const project = projectData.find((p) => p.id === projectId);
+
+            if (project) {
+              const tagsHtml = project.tags
+                .map((tag) => `<span class="tag">${tag}</span>`)
+                .join("");
+              modalContent.innerHTML = `
           <img src="${project.imgSrc}" alt="${project.title}">
           <h3>${project.title}</h3>
           <div class="tags-tecnologias">${tagsHtml}</div>
@@ -361,27 +289,21 @@
           </div>
         `;
 
-            modal.style.display = "block";
+              modal.style.display = "block";
+            }
+          });
+        });
+
+        closeButton.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.style.display = "none";
           }
         });
       });
-
-      closeButton.addEventListener("click", () => {
-        modal.style.display = "none";
-      });
-
-      window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.style.display = "none";
-        }
-      });
-    });
-    <footer>
-      <div class="container">
-        <p>&copy; 2025 Pata Feliz. Todos os direitos reservados.</p>
-      </div>
-    </footer>;
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

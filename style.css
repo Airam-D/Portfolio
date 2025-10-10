@@ -330,8 +330,65 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  .atividades-titulo,
+  .depoimentos-titulo {
+    font-size: 1.8em;
+    text-align: center;
+    padding: 20px 15px 10px 15px;
+  }
+
   .atividades-caixa {
-    flex-direction: column;
+    padding: 0 15px; 
+  }
+
+  .atividades-card {
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .atividades-card-titulo {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .atividades-paragrafo {
+    font-size: 0.95em; 
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .botao-saiba-mais {
+    display: inline-block;
+    margin: 15px auto 0 auto; 
+    padding: 10px 25px;
+    font-size: 0.9em;
+    border-radius: 5px;
+  }
+
+  .depoimentos-caixa {
+    flex-direction: column; 
+    align-items: center;
+    padding: 0 15px; 
+  }
+
+  .depoimentos-card {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 30px;
+    padding: 25px;
+  }
+
+  .depoimentos-img {
+    width: 80px; 
+    height: 80px;
+  }
+
+  .depoimentos-paragrafo {
+    font-size: 0.9em;
+    line-height: 1.6;
   }
 }
 

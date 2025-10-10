@@ -329,6 +329,7 @@ h1 {
   font-size: 1.2rem;
   color: rgba(226, 232, 240, 0.8);
   line-height: 1.5;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -349,7 +350,6 @@ h1 {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    /* CORRIGIDO: Garante que ocupe a largura total do container pai em mobile */
     width: 100%;
     max-width: 450px;
   }
@@ -363,7 +363,6 @@ h1 {
     font-size: 0.95em;
     line-height: 1.6;
     margin-bottom: 15px;
-    /* CORRIGIDO: Alinha à esquerda para melhor quebra de texto em mobile */
     text-align: left;
   }
 

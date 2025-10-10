@@ -306,7 +306,9 @@ h1 {
   backdrop-filter: blur(10px);
   border: 1px solid var(--vidro);
   padding: 2rem;
-  width: 500px;
+  /* CORRIGIDO: Removido o width fixo para melhor responsividade em telas maiores */
+  width: 90%;
+  max-width: 500px;
   overflow: hidden;
   transition: all 0.5s ease;
 }
@@ -347,6 +349,9 @@ h1 {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    /* CORRIGIDO: Garante que ocupe a largura total do container pai em mobile */
+    width: 100%;
+    max-width: 450px;
   }
 
   .atividades-card-titulo {
@@ -358,6 +363,8 @@ h1 {
     font-size: 0.95em;
     line-height: 1.6;
     margin-bottom: 15px;
+    /* CORRIGIDO: Alinha à esquerda para melhor quebra de texto em mobile */
+    text-align: left;
   }
 
   .botao-saiba-mais {

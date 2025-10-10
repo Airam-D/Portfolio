@@ -115,19 +115,18 @@ h1 {
   margin: 20px;
 }
 .botao-contato {
-  margin-top: 20px;
-  border: 4px solid var(--vidro);
-  border-radius: 8px;
   padding: 10px 20px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: var(--claro);
-}
-.botao-contato:hover {
-  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
-  transform: translateY(-5px);
   background: linear-gradient(90deg, var(--primaria), var(--secondaria));
   color: var(--claro);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.botao-contato:hover {
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+  transform: scale(1.05);
 }
 .cabecalho-sub-titulo {
   font-size: 1.5rem;
@@ -306,7 +305,6 @@ h1 {
   backdrop-filter: blur(10px);
   border: 1px solid var(--vidro);
   padding: 2rem;
-  /* CORRIGIDO: Removido o width fixo para melhor responsividade em telas maiores */
   width: 90%;
   max-width: 500px;
   overflow: hidden;

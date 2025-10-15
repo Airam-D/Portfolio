@@ -155,3 +155,27 @@ footer p {
     font-size: 0.9rem;
   }
 }
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon {
+  height: 60px;
+  width: 60px;
+  filter: invert(1);
+  color: var(--Escuro);
+}
+
+.social-link:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px var(--primaria));
+}

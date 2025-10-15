@@ -133,9 +133,9 @@ body {
 footer {
   background-color: var(--maisEscuro);
   color: var(--claro);
-  padding: 20px 0;
+  padding: 30px 0;
   text-align: center;
-  border-top: 1px solid var(--vidro);
+  border-top: 4px solid var(--primaria);
   margin-top: 50px;
 }
 
@@ -146,15 +146,16 @@ footer .container {
 }
 
 footer p {
-  font-size: 0.9rem;
-  opacity: 0.7;
+  font-size: 1rem;
+  opacity: 0.9;
+  text-shadow: 0 0 5px rgba(79, 70, 229, 0.5);
 }
 
 @media (max-width: 768px) {
   footer {
-    padding: 15px 0;
+    padding: 20px 0;
   }
   footer p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }

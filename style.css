@@ -879,3 +879,32 @@ h1 {
     padding-right: 15px;
   }
 }
+
+footer {
+  background-color: var(--maisEscuro);
+  color: var(--claro);
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid var(--vidro);
+  margin-top: 50px;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+footer p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 15px 0;
+  }
+  footer p {
+    font-size: 0.8rem;
+  }
+}

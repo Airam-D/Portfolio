@@ -134,10 +134,6 @@ body {
 }
 
 .botao-voltar:hover {
-  color: var(--escuro);
-}
-
-.botao-voltar:hover {
   box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
   transform: translateY(-5px);
   background: linear-gradient(90deg, var(--primaria), var(--secondaria));
@@ -161,38 +157,33 @@ body {
   }
 }
 
-footer {
-  background-color: var(--maisEscuro);
+.blog-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.Ler-blog {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, var(--primaria), var(--secondaria));
   color: var(--claro);
-  padding: 30px 0;
-  text-align: center;
-  border-top: 4px solid var(--primaria);
-  margin-top: 50px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.Ler-blog:hover {
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+  transform: scale(1.05);
 }
 
-footer p {
-  margin: 10px 0;
-  font-size: 0.9rem;
-}
-
-.footer-blog {
-  text-align: center;
-  padding: 20px;
-  border-top: 1px solid #333;
-  color: #888;
-  font-size: 0.9em;
-}
+/* --- ESTILOS DO NOVO FOOTER (RODAPÉ) --- */
 .portfolio-footer {
   background-color: var(--Escuro);
   color: var(--claro);
   padding: 25px 0;
-  margin-top: 80px;
+  margin-top: 50px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -202,7 +193,7 @@ footer p {
   align-items: center;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
 .footer-info {
@@ -292,25 +283,4 @@ footer p {
   .footer-social-links {
     margin-top: 10px;
   }
-}
-
-.blog-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.Ler-blog {
-  padding: 10px 20px;
-  background: linear-gradient(90deg, var(--primaria), var(--secondaria));
-  color: var(--claro);
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.Ler-blog:hover {
-  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
-  transform: scale(1.05);
 }

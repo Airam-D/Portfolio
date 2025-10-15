@@ -293,3 +293,24 @@ footer p {
     margin-top: 10px;
   }
 }
+
+.blog-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.Ler-blog {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, var(--primaria), var(--secondaria));
+  color: var(--claro);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.Ler-blog:hover {
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+  transform: scale(1.05);
+}

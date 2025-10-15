@@ -16,13 +16,6 @@ body {
   --vidro: rgba(255, 255, 255, 0.1);
 }
 
-.header-blogs {
-  background-color: #1a1b25;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid #333;
-}
-
 .botao-voltar {
   display: flex;
   align-items: center;

@@ -33,6 +33,7 @@ body {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
+  display: inline-block; 
   transition: all 0.3s ease;
 }
 

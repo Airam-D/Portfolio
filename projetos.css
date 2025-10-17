@@ -26,6 +26,21 @@ body {
   text-align: center;
 }
 
+.botao-ver-projeto {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, var(--primaria), var(--secondaria));
+  color: var(--claro);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.botao-ver-projeto:hover {
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+  transform: scale(1.05);
+}
+
 .projetos-img {
   height: 200px;
   width: 100%;
@@ -149,22 +164,6 @@ body {
   50% {
     transform: translateY(-20px);
   }
-}
-
-.botao-ver-todos {
-  border: 4px solid var(--vidro);
-  border-radius: 8px;
-  padding: 10px 20px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: var(--claro);
-  background: linear-gradient(90deg, var(--primaria), var(--secondaria));
-}
-
-.botao-ver-todos:hover {
-  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
-  transform: translateY(-5px);
-  background: linear-gradient(90deg, var(--secondaria), var(--primaria));
 }
 
 .modal {

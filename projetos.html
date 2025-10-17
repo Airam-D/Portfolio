@@ -289,7 +289,6 @@
         <div id="modal-project-content" class="modal-project-content"></div>
       </div>
     </div>
-
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const projectCards = document.querySelectorAll(".projetos-card");
@@ -385,14 +384,14 @@
                 .map((tag) => `<span class="tag">${tag}</span>`)
                 .join("");
               modalContent.innerHTML = `
-                    <img src="${project.imgSrc}" alt="${project.title}">
-                    <h3>${project.title}</h3>
-                    <div class="tags-tecnologias">${tagsHtml}</div>
-                    <p>${project.description}</p>
-                    <div class="botoes-projeto">
-                        <a href="${project.link}" target="_blank" class="botao-ver-projeto">Ver Projeto</a>
-                    </div>
-                `;
+          <img src="${project.imgSrc}" alt="${project.title}">
+          <h3>${project.title}</h3>
+          <div class="tags-tecnologias">${tagsHtml}</div>
+          <p>${project.description}</p>
+          <div class="botoes-projeto">
+            <a href="${project.link}" target="_blank" class="botao-ver-projeto">Ver Projeto</a>
+          </div>
+        `;
 
               modal.style.display = "block";
             }

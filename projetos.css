@@ -53,13 +53,6 @@ body {
   margin-bottom: 50px;
 }
 
-.projetos-card:hover {
-  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
-  transform: translateY(-10px) scale(1.03);
-  transition: all 0.5s ease;
-  cursor: pointer;
-}
-
 .projetos-caixa {
   display: flex;
   flex-wrap: wrap;
@@ -395,4 +388,9 @@ body {
   background: linear-gradient(90deg, var(--primaria), var(--secondaria));
   color: var(--claro);
   border: 4px solid var(--vidro);
+}
+
+.botoes-projeto {
+  margin-top: 15px;
+  text-align: center;
 }

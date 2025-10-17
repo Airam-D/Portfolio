@@ -151,57 +151,6 @@
         <div id="modal-project-content" class="modal-project-content"></div>
       </div>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const projectCards = document.querySelectorAll(".projetos-card");
-        const modal = document.getElementById("project-modal");
-        const modalContent = document.getElementById("modal-project-content");
-        const closeButton = document.querySelector(".close-button");
-
-        projectCards.forEach((card) => {
-          card.addEventListener("click", (event) => {
-            if (event.target.closest("a")) {
-              event.preventDefault();
-              return;
-            }
-
-            event.preventDefault();
-
-            const imgSrc = card.querySelector(".projetos-img").src;
-            const title = card.querySelector(".info-projetos").textContent;
-            const tagsHtml = card.querySelector(".tags-tecnologias").innerHTML;
-            const description = card.querySelector(
-              ".paragrafo-projetos"
-            ).textContent;
-            const liveLink = card.querySelector(".botao-ver-projeto").href;
-
-            modalContent.innerHTML = `
-              <img src="${imgSrc}" alt="${title}" class="img-modal-full">
-              <h3>${title}</h3>
-              <div class="projeto-tags-container">${tagsHtml}</div>
-              <p class="projeto-descricao">${description}</p>
-              <div class="botoes-projeto">
-                <a href="${liveLink}" target="_blank" class="link-projeto-modal">Ver Projeto Externo</a>
-              </div>
-            `;
-
-            modal.style.display = "block";
-          });
-        });
-
-        closeButton.addEventListener("click", () => {
-          modal.style.display = "none";
-          modalContent.innerHTML = "";
-        });
-
-        window.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            modal.style.display = "none";
-            modalContent.innerHTML = "";
-          }
-        });
-      });
-    </script>
     <footer class="portfolio-footer">
       <div class="footer-content-custom">
         <div class="footer-info">
@@ -262,71 +211,5 @@
         <div id="modal-project-content" class="modal-project-content"></div>
       </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const modal = document.getElementById("project-modal");
-        const modalContent = document.getElementById("modal-project-content");
-        const closeButton = document.querySelector(".close-button");
-        const projectCards = document.querySelectorAll(".projetos-card");
-
-        const buildModalContent = (projectId) => {
-          const card = document.querySelector(
-            `.projetos-card[data-project-id="${projectId}"]`
-          );
-          if (!card) return "";
-
-          const projectLinkElement = card.querySelector("a");
-          const projectURL = projectLinkElement ? projectLinkElement.href : "#";
-
-          const title = card.querySelector(".info-projetos").textContent;
-          const description = card.querySelector(
-            ".paragrafo-projetos"
-          ).textContent;
-          const tags = card.querySelector(".tags-tecnologias").innerHTML;
-          const liveLink = card.querySelector(".botao-ver-projeto").href;
-
-          return `
-            <div class="modal-project-details">
-              <h3>${title}</h3>
-              <div class="tags-tecnologias">${tags}</div>
-              <p>${description}</p>
-              <div class="botoes-projeto">
-                <a href="${liveLink}" target="_blank" class="botao-ver-projeto">Ver Projeto Externo</a>
-              </div>
-            </div>
-            <iframe src="${projectURL}" frameborder="0" title="Preview do Projeto ${title}"></iframe>
-          `;
-        };
-
-        projectCards.forEach((card) => {
-          card.addEventListener("click", (event) => {
-            if (event.target.closest(".botao-ver-projeto")) {
-              return;
-            }
-
-            if (event.target.closest("a")) {
-              event.preventDefault();
-            }
-
-            const projectId = card.getAttribute("data-project-id");
-            modalContent.innerHTML = buildModalContent(projectId);
-            modal.style.display = "block";
-          });
-        });
-
-        closeButton.addEventListener("click", () => {
-          modal.style.display = "none";
-          modalContent.innerHTML = "";
-        });
-
-        window.addEventListener("click", (event) => {
-          if (event.target === modal) {
-            modal.style.display = "none";
-            modalContent.innerHTML = "";
-          }
-        });
-      });
-    </script>
   </body>
 </html>

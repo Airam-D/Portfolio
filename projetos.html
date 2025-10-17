@@ -31,7 +31,7 @@
     </main>
     <section id="projetos" class="projetos">
       <h2 class="projetos-titulo">Meus projetos</h2>
-      <div class="projetos-caixa">
+      <div class="projetos-caixa-completa">
         <div class="projetos-card" data-project-id="1">
           <a href="https://agrosolutio.vercel.app/" target="_blank">
             <img
@@ -163,80 +163,46 @@
         const modalContent = document.getElementById("modal-project-content");
         const closeButton = document.querySelector(".close-button");
 
-        const projectData = [
-          {
-            id: "1",
-            imgSrc: "Capturas de tela/Agro solutio.png",
-            title: "Landing Page AgroSolutio",
-            tags: ["HTML5", "CSS3", "JavaScript"],
-            description: `Uma landing page que eu criei no dia que participei do Hackathon 2025 Agrotheck. Esse site foi desenvolvido para a apresentação de uma ideia inovadora. Ajudamos pequenos produtores a tomar decisões melhores no campo, com recomendações simples que aumentam a produtividade e reduzem custos.`,
-            link: "https://agrosolutio.vercel.app/",
-          },
-          {
-            id: "2",
-            imgSrc: "Capturas de tela/NOCTIS.png",
-            title: "Perfume NOCTIS",
-            tags: ["HTML5", "CSS3", "JavaScript"],
-            description: `Estava querendo aprofundar meu conhecimento em CSS, então pensei
-              em criar uma lading page de um perfume chamado NOCTIS, um perfume
-              masculino ótimo para sair de noites com os amigos ou para
-              encontros românticos. A página é simples, mas elegante, com um
-              design moderno e responsivo que se adapta a diferentes tamanhos de
-              tela. Utilizei técnicas avançadas de CSS para criar efeitos
-              visuais atraentes, como transições suaves e animações sutis. O
-              objetivo deste projeto foi aprimorar minhas habilidades em CSS e
-              criar uma página visualmente atraente que destaque o produto de
-              forma eficaz.`,
-            link: "https://landing-page-noctis.vercel.app/",
-          },
-          {
-            id: "3",
-            imgSrc: "Capturas de tela/Calculadora Web.png",
-            title: "Calculadora Web",
-            tags: ["HTML5", "CSS3", "JavaScript, Math.js"],
-            description: `Uma calculadora web simples que criei para facilitar cálculos
-              rápidos. A interface é intuitiva e responsiva, permitindo que os
-              usuários realizem operações matemáticas básicas com facilidade.
-              Ideal para estudantes e profissionais que precisam de uma
-              ferramenta prática para cálculos do dia a dia. Além disso também
-              tem a opção de mudar para a calculadora científica.`,
-            link: "https://calculadora-web-cientifica.vercel.app/",
-          },
-        ];
-
         projectCards.forEach((card) => {
-          card.addEventListener("click", (e) => {
-            e.preventDefault();
-
-            const projectId = card.dataset.projectId;
-            const project = projectData.find((p) => p.id === projectId);
-
-            if (project) {
-              const tagsHtml = project.tags
-                .map((tag) => `<span class="tag">${tag}</span>`)
-                .join("");
-              modalContent.innerHTML = `
-          <img src="${project.imgSrc}" alt="${project.title}">
-          <h3>${project.title}</h3>
-          <div class="tags-tecnologias">${tagsHtml}</div>
-          <p>${project.description}</p>
-          <div class="botoes-projeto">
-            <a href="${project.link}" target="_blank" class="botao-ver-projeto">Ver Projeto</a>
-          </div>
-        `;
-
-              modal.style.display = "block";
+          card.addEventListener("click", (event) => {
+            if (event.target.closest("a")) {
+              event.preventDefault();
+              return;
             }
+
+            event.preventDefault();
+
+            const imgSrc = card.querySelector(".projetos-img").src;
+            const title = card.querySelector(".info-projetos").textContent;
+            const tagsHtml = card.querySelector(".tags-tecnologias").innerHTML;
+            const description = card.querySelector(
+              ".paragrafo-projetos"
+            ).textContent;
+            const liveLink = card.querySelector(".botao-ver-projeto").href;
+
+            modalContent.innerHTML = `
+              <img src="${imgSrc}" alt="${title}" class="img-modal-full">
+              <h3>${title}</h3>
+              <div class="projeto-tags-container">${tagsHtml}</div>
+              <p class="projeto-descricao">${description}</p>
+              <div class="botoes-projeto">
+                <a href="${liveLink}" target="_blank" class="link-projeto-modal">Ver Projeto Externo</a>
+              </div>
+            `;
+
+            modal.style.display = "block";
           });
         });
 
         closeButton.addEventListener("click", () => {
           modal.style.display = "none";
+          modalContent.innerHTML = "";
         });
 
         window.addEventListener("click", (e) => {
           if (e.target === modal) {
             modal.style.display = "none";
+            modalContent.innerHTML = "";
           }
         });
       });

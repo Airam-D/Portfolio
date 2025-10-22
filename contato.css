@@ -17,9 +17,11 @@
 html,
 body {
   scroll-behavior: smooth;
-  overflow-x: hidden;
   background-color: var(--Escuro);
   color: var(--claro);
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .contatos-titulo {

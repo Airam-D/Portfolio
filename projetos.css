@@ -19,6 +19,9 @@ body {
   scroll-behavior: smooth;
   background-color: var(--Escuro);
   color: var(--claro);
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .projetos {

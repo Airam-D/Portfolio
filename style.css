@@ -19,6 +19,9 @@ body {
   scroll-behavior: smooth;
   background-color: var(--Escuro);
   color: var(--claro);
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -789,7 +792,7 @@ h1 {
   color: #ffffff;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
 
 .botao-saiba-mais:hover {

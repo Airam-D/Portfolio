@@ -1,0 +1,156 @@
+/* ==========================================================================
+   PÁGINA INTERNA DO ARTIGO: DESIGN EDITORIAL PREMIUM
+   ========================================================================== */
+
+.main-artigo {
+    padding-top: 140px;
+    padding-bottom: 8rem;
+}
+
+/* Link Voltar */
+.link-voltar-blog {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--texto-mutado);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    transition: var(--transicao);
+}
+
+.link-voltar-blog:hover {
+    color: var(--primaria);
+    transform: translateX(-4px);
+}
+
+/* Estrutura do Artigo */
+.artigo-completo {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.artigo-header {
+    margin-bottom: 3rem;
+}
+
+.artigo-tag-categoria {
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: var(--primaria);
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+}
+
+.artigo-titulo {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    color: var(--texto-principal);
+    margin-bottom: 2rem;
+}
+
+/* Meta do Autor */
+.artigo-autor-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--vidro-borda);
+    padding-bottom: 2rem;
+}
+
+.autor-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primaria);
+}
+
+.autor-dados {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.autor-nome {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--texto-principal);
+}
+
+.publicacao-detalhes {
+    font-size: 0.85rem;
+    color: var(--texto-mutado);
+}
+
+/* Banner de Imagem Principal */
+.artigo-banner-wrapper {
+    height: 380px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--vidro-borda);
+    margin-bottom: 3.5rem;
+}
+
+.artigo-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Corpo do Texto: Tipografia Avançada */
+.artigo-conteúdo-texto {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #d1d5db;
+    /* Cor suave para leitura prolongada */
+}
+
+.artigo-conteúdo-texto p {
+    margin-bottom: 2rem;
+}
+
+.paragrafo-destaque {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: var(--texto-principal);
+    font-weight: 500;
+}
+
+.artigo-conteúdo-texto h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--texto-principal);
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.5px;
+}
+
+/* Citação */
+blockquote {
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.08) 0%, transparent 100%);
+    border-left: 4px solid var(--primaria);
+    padding: 1.5rem 2rem;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--texto-principal);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin: 3rem 0;
+}
+
+/* RESPONSIVIDADE EDITORIAL */
+@media (max-width: 768px) {
+    .artigo-banner-wrapper {
+        height: 240px;
+    }
+}

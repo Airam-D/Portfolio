@@ -1,0 +1,232 @@
+/* ==========================================================================
+   PÁGINA DE PROJETOS: DESIGN SYSTEM & INTERFACE PREMIUM (UI FOCUS)
+   ========================================================================== */
+
+.main-projetos {
+    padding-top: 140px;
+    padding-bottom: 8rem;
+    background: radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.07) 0%, transparent 50%);
+}
+
+/* --------------------------------------------------------------------------
+   1. BLOCO DE INTRODUÇÃO (HERO DE CASES)
+   -------------------------------------------------------------------------- */
+.projetos-intro {
+    max-width: 800px;
+    margin-bottom: 5rem;
+    text-align: left;
+}
+
+.projetos-titulo-principal {
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    color: var(--texto-principal);
+    margin: 1.5rem 0;
+}
+
+.projetos-descricao-página {
+    font-size: 1.15rem;
+    color: var(--texto-mutado);
+    line-height: 1.7;
+    max-width: 650px;
+}
+
+/* --------------------------------------------------------------------------
+   2. GRELHA / GRID DE PROJETOS (LAYOUT ASSIMÉTRICO)
+   -------------------------------------------------------------------------- */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    gap: 3rem;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .projetos-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. CARD DO PROJETO ULTRA-MODERNO (UI PREMIUM)
+   -------------------------------------------------------------------------- */
+.projeto-card {
+    position: relative;
+    background: rgba(11, 15, 25, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transicao);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeito de vazamento de luz interno (Glow Effect no Hover) */
+.projeto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 65%);
+    opacity: 0;
+    transition: var(--transicao);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.projeto-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(168, 85, 247, 0.3);
+    box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.7);
+}
+
+.projeto-card:hover::before {
+    opacity: 1;
+}
+
+/* Header interno do Card (Número e Categoria) */
+.projeto-card-header {
+    padding: 2.5rem 2.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.projeto-numero {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primaria);
+    letter-spacing: 1.5px;
+}
+
+.projeto-categoria {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--texto-mutado);
+    font-weight: 600;
+}
+
+/* Corpo Informativo Principal */
+.projeto-info {
+    padding: 2rem 2.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    z-index: 2;
+}
+
+.projeto-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--texto-principal);
+    letter-spacing: -0.5px;
+    transition: var(--transicao);
+}
+
+.projeto-card:hover .projeto-info h3 {
+    color: #ffffff;
+}
+
+.projeto-texto-desc {
+    color: var(--texto-mutado);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. BADGES DE TECNOLOGIA (DESIGN MINIMALISTA)
+   -------------------------------------------------------------------------- */
+.projeto-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+}
+
+.badge-tech {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: rgba(243, 244, 246, 0.8);
+    padding: 0.45rem 0.95rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: var(--transicao);
+}
+
+.projeto-card:hover .badge-tech {
+    background: rgba(99, 102, 241, 0.04);
+    border-color: rgba(99, 102, 241, 0.15);
+    color: var(--texto-principal);
+}
+
+/* --------------------------------------------------------------------------
+   5. LINKS DE AÇÃO (MICROINTERAÇÕES)
+   -------------------------------------------------------------------------- */
+.projeto-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 1.5rem;
+}
+
+.btn-projeto-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: var(--transicao);
+}
+
+/* Link Código (GitHub) */
+.btn-projeto-link.github {
+    color: var(--texto-mutado);
+}
+
+.btn-projeto-link.github span {
+    transition: transform 0.3s ease;
+}
+
+.btn-projeto-link.github:hover {
+    color: var(--texto-principal);
+}
+
+.btn-projeto-link.github:hover span {
+    transform: translateY(2px);
+}
+
+/* Link Demonstração (Live View) */
+.btn-projeto-link.demo {
+    color: var(--texto-principal);
+    position: relative;
+}
+
+.btn-projeto-link.demo .seta-link {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--primaria);
+    font-weight: 700;
+}
+
+.btn-projeto-link.demo:hover {
+    color: var(--secundaria);
+}
+
+.btn-projeto-link.demo:hover .seta-link {
+    transform: translateX(5px);
+    color: var(--secundaria);
+}

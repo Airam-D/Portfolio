@@ -1,0 +1,151 @@
+/* ==========================================================================
+   PÁGINA DE CONTATO: LAYOUT & FORMULÁRIO PREMIUM
+   ========================================================================== */
+
+.main-contato {
+    padding-top: 140px;
+    padding-bottom: 8rem;
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* Coluna de Texto Informativo */
+.contato-info-bloco {
+    max-width: 520px;
+}
+
+.contato-titulo-principal {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin: 1.5rem 0;
+}
+
+.contato-descricao {
+    font-size: 1.1rem;
+    color: var(--texto-mutado);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+/* Cards de Canais Diretos */
+.canais-diretos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.canal-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+}
+
+.canal-icone {
+    font-size: 1.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: var(--primaria);
+}
+
+.canal-texto h6 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--texto-principal);
+    margin-bottom: 0.2rem;
+}
+
+.canal-texto p {
+    font-size: 0.9rem;
+    color: var(--texto-mutated, var(--texto-mutado));
+}
+
+/* Wrapper e Design do Formulário (Glassmorphism) */
+.contato-formulario-wrapper {
+    background: rgba(10, 15, 30, 0.4);
+    border: 1px solid var(--vidro-borda);
+    border-radius: var(--radius-md);
+    padding: 3rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.form-titulo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label-form {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--texto-principal);
+    letter-spacing: 0.5px;
+}
+
+.campo-form {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    color: var(--texto-principal);
+    font-size: 0.95rem;
+    transition: var(--transicao);
+}
+
+.campo-form:focus {
+    outline: none;
+    border-color: var(--primaria);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.area-form {
+    height: 140px;
+    resize: none;
+}
+
+.btn-form-enviar {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+/* INTERAÇÃO DE TELA (RESPONSIVIDADE) */
+@media (max-width: 992px) {
+    .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .contato-formulario-wrapper {
+        padding: 2rem 1.5rem;
+    }
+}

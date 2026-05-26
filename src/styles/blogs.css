@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PÁGINA DE EXPERIÊNCIAS: DESIGN SYSTEM & INTERFACE (UI FOCUS)
+   PÁGINA DE TRAJETÓRIA: TIMELINE DESIGN SYSTEM (UI DE ALTO PADRÃO)
    ========================================================================== */
 
 .main-blogs {
@@ -30,83 +30,121 @@
     max-width: 650px;
 }
 
-/* Grelha de Artigos */
-.blogs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
-    gap: 3rem;
+/* --------------------------------------------------------------------------
+   ESTRUTURA NATIVA DA LINHA DO TEMPO (TIMELINE)
+   -------------------------------------------------------------------------- */
+.timeline-section {
+    position: relative;
     width: 100%;
+    max-width: 900px;
+    /* Alinhamento centralizado luxuoso */
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    .blogs-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+/* A Linha Vertical Guia (Espinha dorsal da timeline igual ao print) */
+.timeline-container {
+    position: relative;
+    padding-left: 45px;
+    /* Espaço para a linha e os nós respirarem */
 }
 
-/* Card Estilo UI Premium */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 2px;
+    height: calc(100% - 20px);
+    background: linear-gradient(to bottom, rgba(168, 85, 247, 0.4) 0%, rgba(99, 102, 241, 0.1) 100%);
+}
+
+/* Container de cada linha de registro */
+.timeline-item {
+    position: relative;
+    margin-bottom: 3.5rem;
+    /* Espaço generoso entre os marcos temporais */
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* O Nó / Marcador da Timeline */
+.timeline-node {
+    position: absolute;
+    top: 28px;
+    /* Alinhamento perfeito com o centro do header do card */
+    left: -45px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+/* O círculo interno luminoso */
+.node-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--bg-principal);
+    border: 3px solid var(--secundaria);
+    border-radius: 50%;
+    transition: var(--transicao);
+    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15);
+}
+
+/* Microinteração: Quando o card recebe hover, a bolinha da timeline acende! */
+.timeline-item:hover .node-dot {
+    background: var(--secundaria);
+    transform: scale(1.2);
+    box-shadow: 0 0 15px var(--secundaria);
+}
+
+/* --------------------------------------------------------------------------
+   O CARD DE CONTEÚDO (ESTILIZADO PARA A TIMELINE)
+   -------------------------------------------------------------------------- */
 .blog-card {
     position: relative;
-    background: rgba(11, 15, 25, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(11, 15, 25, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.04);
     border-radius: var(--radius-lg);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: var(--transicao);
-    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
-}
-
-/* Glow Effect Roxo no Hover */
-.blog-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 100% 0%, rgba(168, 85, 247, 0.12) 0%, transparent 65%);
-    opacity: 0;
-    transition: var(--transicao);
-    pointer-events: none;
-    z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .blog-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(99, 102, 241, 0.3);
-    box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.7);
+    transform: translateX(6px);
+    /* Em vez de subir, ele desliza suavemente para o lado acompanhando a linha! */
+    border-color: rgba(168, 85, 247, 0.25);
+    background: rgba(11, 15, 25, 0.6);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
 }
 
-.blog-card:hover::before {
-    opacity: 1;
-}
-
+/* Header interno do Card */
 .blog-card-header {
-    padding: 2.5rem 2.5rem 0;
-    z-index: 2;
+    padding: 2rem 2.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .blog-badge-tag {
-    background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    background: rgba(168, 85, 247, 0.08);
+    border: 1px solid rgba(168, 85, 247, 0.15);
     color: var(--secundaria);
-    padding: 0.4rem 0.9rem;
+    padding: 0.35rem 0.8rem;
     border-radius: var(--radius-sm);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-}
-
-/* Informações do Corpo do Card */
-.blog-info {
-    padding: 2rem 2.5rem 2.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    z-index: 2;
 }
 
 .blog-meta {
@@ -115,25 +153,145 @@
     gap: 0.5rem;
     font-size: 0.85rem;
     color: var(--texto-mutado);
-    margin-bottom: 1rem;
     font-weight: 600;
 }
 
+.empresa-destaque {
+    color: var(--texto-principal);
+}
+
 .blog-separador {
-    color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.08);
+}
+
+/* Informações do Corpo do Card */
+.blog-info {
+    padding: 1.5rem 2.5rem 2.5rem;
 }
 
 .blog-info h3 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.3;
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
     color: var(--texto-principal);
-    letter-spacing: -0.5px;
+    letter-spacing: -0.4px;
 }
 
 .blog-texto-desc {
     color: var(--texto-mutado);
     font-size: 0.95rem;
     line-height: 1.7;
+}
+
+/* ==========================================================================
+   EFEITO SCROLL REVEAL DINÂMICO (ANIMAÇÃO AO ROLAR)
+   ========================================================================== */
+
+/* Estado Inicial: Oculto e deslocado para baixo */
+.timeline-item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+    /* Otimização de hardware do navegador */
+}
+
+/* Estado Ativo: Totalmente visível na posição original */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS PARA A PÁGINA INTERNA DE LEITURA (CONTEÚDO REAL SENAI)
+   ========================================================================== */
+
+.main-leitura-artigo {
+    background: radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.04) 0%, transparent 60%);
+}
+
+.article-container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 140px 2rem 8rem;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--texto-mutado);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 3rem;
+    transition: var(--transicao);
+}
+
+.btn-voltar:hover {
+    color: var(--secundaria);
+    transform: translateX(-5px);
+}
+
+.btn-voltar svg {
+    transition: transform 0.3s ease;
+}
+
+.article-header {
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 2.5rem;
+}
+
+.article-tag {
+    background: rgba(168, 85, 247, 0.08);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    color: var(--secundaria);
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.article-titulo {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--texto-principal);
+    letter-spacing: -1.5px;
+    margin: 1.8rem 0 1.2rem;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--texto-mutado);
+    font-weight: 500;
+}
+
+.article-separador {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.article-body {
+    font-size: 1.125rem;
+    line-height: 1.85;
+    color: rgba(243, 244, 246, 0.95);
+}
+
+.article-body p {
+    margin-bottom: 2.2rem;
+}
+
+.article-body h2 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--texto-principal);
+    margin: 3.5rem 0 1.2rem;
+    letter-spacing: -0.5px;
 }

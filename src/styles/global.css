@@ -658,14 +658,6 @@ a {
   transform: translateY(-3px);
 }
 
-.ferramentas-grid-cards .grid-largo {
-  grid-column: span 2;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding-left: 1.25rem;
-  gap: 1rem;
-}
-
 .api-icon-wrapper {
   background: #3b82f6;
   color: #030712;
@@ -1438,6 +1430,7 @@ a {
   .sobre-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
+    padding: 1.5rem;
   }
 
   .sobre-stack {
@@ -1465,23 +1458,41 @@ a {
 }
 
 @media (max-width: 768px) {
+  .header-global {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 15, 30, 0.9) !important;
+    /* Fundo escuro com transparência */
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    padding: 1rem 0;
+  }
+
   .btn-mobile-toggle {
     display: block;
   }
 
   .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100vh;
-    background: #060913;
-    border-left: 1px solid var(--vidro-borda);
-    flex-direction: column;
+    display: flex !important;
+    /* Força os links a reaparecerem */
+    flex-direction: row;
+    /* Deixa eles lado a lado */
+    flex-wrap: wrap;
+    /* Se não couberem, eles quebram a linha sozinhos */
     justify-content: center;
-    gap: 3rem;
-    padding: 2rem;
-    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    /* Joga os links para baixo do logo no celular */
+    align-items: center;
+    gap: 0.8rem;
   }
 
   .nav-menu.active {
@@ -1509,6 +1520,16 @@ a {
   .cta-botoes .btn-principal,
   .cta-botoes .btn-secundario {
     width: 100%;
+  }
+
+  .contato-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  .campo-form {
+    height: 50px;
   }
 }
 
@@ -1558,10 +1579,7 @@ a {
 
   .ferramentas-grid-cards {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ferramentas-grid-cards .grid-largo {
-    grid-column: span 2;
+    padding: 1.5rem
   }
 }
 
@@ -1601,4 +1619,69 @@ a {
 .btn-premium-atividades:hover .seta-animada {
   transform: translateX(6px);
   color: var(--texto-principal);
+}
+
+/* ==========================================================================
+   MELHORIAS DE ESPAÇAMENTO DA SEÇÃO SOBRE EXPANDIDA
+   ========================================================================== */
+
+/* Estilização do novo bloco do lado esquerdo */
+.sobre-metas-adicional {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 2rem;
+}
+
+.meta-item-box {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.meta-indicador {
+  color: var(--secundaria, #a855f7);
+  font-weight: 800;
+  font-size: 1.1rem;
+  background: rgba(168, 85, 247, 0.08);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  flex-shrink: 0;
+}
+
+.meta-item-box h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  margin-bottom: 0.25rem;
+}
+
+.meta-item-box p {
+  color: var(--texto-mutado);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Garante que o grid de cards do lado direito se comporte bem com 3 itens */
+.stack-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stack-card {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stack-card:hover {
+  transform: translateX(4px);
+  border-color: rgba(168, 85, 247, 0.2) !important;
 }

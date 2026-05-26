@@ -7,7 +7,7 @@
     <title>Iniciar Projeto | Airam D' Avilla</title>
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/contato.css" />
-    <link rel="icon" type="image/png" href="src/assets/ícone_portfolio.png" />
+    <link rel="icon" type="image/png" href="./assets/icone_portfolio.png"/>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                         <div class="canal-icone">✉️</div>
                         <div class="canal-texto">
                             <h6>E-mail Profissional</h6>
-                            <p>seu-email@dominio.com</p>
+                            <p>airamdavilla.dev@gmail.com</p>
                         </div>
                     </div>
 
@@ -53,36 +53,42 @@
                         <div class="canal-icone">📍</div>
                         <div class="canal-texto">
                             <h6>Localização</h6>
-                            <p>São Paulo, Brasil (Disponível para atuação Global remoto)</p>
+                            <p>Estado de São Paulo, Brasil </p>
+                            <p>(Disponível para atuação Global remoto)</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="contato-formulario-wrapper">
-                <form class="formulario-premium" action="#" method="POST">
-                    <h3 class="form-titulo">Enviar Mensagem</h3>
+            <div class="box-formulario">
+                <h3 class="form-titulo">Gostou do meu perfil? <br><span class="texto-gradiente">Inicie uma
+                        proposta</span></h3>
+                <div class="contato-formulario-wrapper">
+                    <form class="formulario-premium" action="https://formspree.io/mailme/davillaairam@gmail.com"
+                        method="POST">
+                        <h3 class="form-titulo">Enviar Mensagem</h3>
 
-                    <div class="grupo-form">
-                        <label for="nome" class="label-form">Seu Nome / Empresa</label>
-                        <input type="text" id="nome" name="nome" class="campo-form" placeholder="Ex: John Doe"
-                            required />
-                    </div>
+                        <div class="grupo-form">
+                            <label for="nome" class="label-form">Seu Nome / Empresa</label>
+                            <input type="text" id="nome" name="nome" class="campo-form" placeholder="Ex: John Doe"
+                                required />
+                        </div>
 
-                    <div class="grupo-form">
-                        <label for="email" class="label-form">E-mail de Contacto</label>
-                        <input type="email" id="email" name="email" class="campo-form" placeholder="john@empresa.com"
-                            required />
-                    </div>
+                        <div class="grupo-form">
+                            <label for="email" class="label-form">E-mail de Contacto</label>
+                            <input type="email" id="email" name="email" class="campo-form"
+                                placeholder="john@empresa.com" required />
+                        </div>
 
-                    <div class="grupo-form">
-                        <label for="mensagem" class="label-form">Detalhes do Projeto / Proposta</label>
-                        <textarea id="mensagem" name="mensagem" class="campo-form area-form"
-                            placeholder="Descreva brevemente o que a sua empresa precisa..." required></textarea>
-                    </div>
+                        <div class="grupo-form">
+                            <label for="mensagem" class="label-form">Detalhes do Projeto / Proposta</label>
+                            <textarea id="mensagem" name="mensagem" class="campo-form area-form"
+                                placeholder="Descreva brevemente o que a sua empresa precisa..." required></textarea>
+                        </div>
 
-                    <button type="submit" class="btn-principal btn-form-enviar">Enviar Proposta Direta</button>
-                </form>
+                        <button type="submit" class="btn-principal btn-form-enviar">Enviar Proposta</button>
+                    </form>
+                </div>
             </div>
 
         </div>

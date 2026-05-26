@@ -44,39 +44,47 @@
 .canal-card {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
     background: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    padding: 1.25rem;
-    border-radius: var(--radius-sm);
+    border: 1px solid var(--vidro-borda);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: var(--transicao);
+}
+
+.canal-card:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(168, 85, 247, 0.3);
+    transform: translateX(5px);
 }
 
 .canal-icone {
     font-size: 1.5rem;
-    background: rgba(99, 102, 241, 0.1);
-    width: 45px;
-    height: 45px;
+    background: rgba(168, 85, 247, 0.1);
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
-    color: var(--primaria);
+    border-radius: 50%;
+    color: var(--secundaria);
 }
 
-.canal-texto h6 {
-    font-size: 0.95rem;
+.canal-detalhes h4 {
+    font-size: 1rem;
     font-weight: 700;
     color: var(--texto-principal);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
 }
 
-.canal-texto p {
+.canal-detalhes p {
     font-size: 0.9rem;
-    color: var(--texto-mutated, var(--texto-mutado));
+    color: var(--texto-mutado);
 }
 
-/* Wrapper e Design do Formulário (Glassmorphism) */
-.contato-formulario-wrapper {
+/* Container do Formulário (Glassmorphism) */
+.box-formulario {
     background: rgba(10, 15, 30, 0.4);
     border: 1px solid var(--vidro-borda);
     border-radius: var(--radius-md);
@@ -107,7 +115,9 @@
     letter-spacing: 0.5px;
 }
 
-.campo-form {
+/* Campos de entrada Input e Textarea unificados */
+.campo-form,
+.campo-form-area {
     width: 100%;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -115,37 +125,77 @@
     border-radius: var(--radius-sm);
     color: var(--texto-principal);
     font-size: 0.95rem;
+    font-family: inherit;
     transition: var(--transicao);
-}
-
-.campo-form:focus {
     outline: none;
-    border-color: var(--primaria);
-    background: rgba(255, 255, 255, 0.04);
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
 }
 
-.area-form {
-    height: 140px;
-    resize: none;
+.campo-form-area {
+    resize: vertical;
+    min-height: 120px;
 }
+
+.campo-form:focus,
+.campo-form-area:focus {
+    border-color: var(--secundaria);
+    background: rgba(168, 85, 247, 0.02);
+}
+
+/* Feedback do botão ao enviar */
+.btn-form-enviar {
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   AJUSTE DE DESIGN: BOTÃO DE ENVIAR PROPOSTA
+   ========================================================================== */
 
 .btn-form-enviar {
     width: 100%;
-    padding: 1rem;
+    min-height: 54px;
+    /* Garante uma altura excelente e clicável */
+    padding: 1rem 2rem;
+    /* Dá o espaçamento interno correto para o texto respirar */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--vidro-borda);
+    border-radius: var(--radius-sm, 8px);
+    color: var(--texto-principal, #ffffff);
     font-size: 1rem;
-    margin-top: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    /* Herda a fonte global do seu site */
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* INTERAÇÃO DE TELA (RESPONSIVIDADE) */
-@media (max-width: 992px) {
-    .contato-grid {
-        grid-template-columns: 1fr;
-        gap: 4rem;
+/* Efeito de Hover (quando passa o rato/mouse por cima) */
+.btn-form-enviar:hover {
+    background: rgba(168, 85, 247, 0.1) !important;
+    /* Brilho roxo sutil de fundo */
+    border-color: var(--secundaria, #a855f7) !important;
+    /* Borda roxa */
+    transform: translateY(-2px);
+    /* Efeito clássico de subir levemente */
+    box-shadow: 0 10px 20px -10px rgba(168, 85, 247, 0.3);
+}
+
+/* Garante que a seta se mova um pouquinho no hover */
+.btn-form-enviar:hover .seta-link {
+    transform: translateX(4px);
+    transition: transform 0.3s ease;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
     }
 
-    .contato-formulario-wrapper {
-        padding: 2rem 1.5rem;
+    to {
+        transform: rotate(360deg);
     }
 }

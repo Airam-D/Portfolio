@@ -125,28 +125,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. EFEITO DE REVELAÇÃO DA TIMELINE AO ROLAR
-    const itensTimeline = document.querySelectorAll('.timeline-item');
+    // 5. MECÂNICA DE APRESENTAÇÃO HORIZONTAL (SLIDER TIMELINE)
+    const containerHorizontal = document.querySelector('.timeline-container-horizontal');
+    const itensTimeline = document.querySelectorAll('.timeline-item-horizontal');
+    const btnPrev = document.querySelector('.btn-prev');
+    const btnNext = document.querySelector('.btn-next');
 
-    if (itensTimeline.length > 0) {
-        const opcoesObserver = {
-            root: null,
-            rootMargin: '0px 0px -10% 0px',
-            threshold: 0.1
-        };
+    if (containerHorizontal && itensTimeline.length > 0) {
+        let indexAtual = 0;
 
-        const timelineObserver = new IntersectionObserver((entradas) => {
-            entradas.forEach(entrada => {
-                if (entrada.isIntersecting) {
-                    entrada.target.classList.add('visible');
+        function atualizarNavegacaoTimeline() {
+            // Aplica o deslocamento baseado em qual slide está ativo (0 = 0%, 1 = -100%, etc)
+            containerHorizontal.style.transform = `translateX(-${indexAtual * 100}%)`;
+
+            // Altera as classes de opacidade e foco visual
+            itensTimeline.forEach((item, idx) => {
+                if (idx === indexAtual) {
+                    item.classList.add('active');
                 } else {
-                    if (entrada.boundingClientRect.top > 0) {
-                        entrada.target.classList.remove('visible');
-                    }
+                    item.classList.remove('active');
                 }
             });
-        }, opcoesObserver);
 
-        itensTimeline.forEach(item => timelineObserver.observe(item));
+            // Gerenciamento de segurança dos botões de controle (desativa nos extremos)
+            if (btnPrev) btnPrev.disabled = indexAtual === 0;
+            if (btnNext) btnNext.disabled = indexAtual === itensTimeline.length - 1;
+        }
+
+        // Evento do botão Avançar
+        if (btnNext) {
+            btnNext.addEventListener('click', () => {
+                if (indexAtual < itensTimeline.length - 1) {
+                    indexAtual++;
+                    atualizarNavegacaoTimeline();
+                }
+            });
+        }
+
+        // Evento do botão Voltar
+        if (btnPrev) {
+            btnPrev.addEventListener('click', () => {
+                if (indexAtual > 0) {
+                    indexAtual--;
+                    atualizarNavegacaoTimeline();
+                }
+            });
+        }
+
+        // Inicializa o estado dos botões ao carregar a página
+        atualizarNavegacaoTimeline();
     }
+
 });

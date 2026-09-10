@@ -1709,23 +1709,41 @@ a {
    ========================================================================== */
 .featured-project-section {
   width: 100%;
-  padding: 80px 0; /* Aumentamos um pouco o respiro vertical para dar destaque */
-  background: radial-gradient(
-    circle at 85% 30%,
-    rgba(168, 85, 247, 0.04) 0%,
-    transparent 60-px
-  );
-  border-top: 1px solid rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-  display: flex;
-  justify-content: center;
+  padding: 60px 0;
+  background: transparent; /* Remove as linhas de divisão e deixa o fundo do site passar limpo */
 }
 
 .project-container {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
+  gap: 50px;
   align-items: center;
+  position: relative;
+  z-index: 2; /* Fica acima do efeito de brilho traseiro */
+}
+
+/* 🌟 O CARD PREMIUM FLUTUANTE (GLASSMORPHISM CONECTADO AO SEU DESIGN SYSTEM) */
+.project-card-wrapper {
+  background: var(--vidro-bg);
+  border: 1px solid var(--vidro-borda);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(
+    --radius-lg
+  ); /* Curvatura elegante combinando com seu portfólio */
+  padding: 50px;
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transicao);
+}
+
+/* Interação extra: Um leve brilho na borda e elevação ao passar o mouse perto do card */
+.project-card-wrapper:hover {
+  border-color: rgba(168, 85, 247, 0.25);
+  box-shadow:
+    0 40px 80px -25px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(168, 85, 247, 0.03);
 }
 
 /* --- LADO ESQUERDO: CONTEÚDO E TEXTOS --- */

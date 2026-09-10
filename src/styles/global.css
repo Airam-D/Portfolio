@@ -1,14 +1,14 @@
 /* ==========================================================================
    1. IMPORTAÇÃO DE FONTES & RESETS PROFISSIONAIS
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -104,11 +104,15 @@ a {
 
 /* A fonte estilizada/itálica para o sobrenome baseada na referência */
 .logo-header-brand .sobrenome-italico {
-  font-family: 'Playfair Display', 'Georgia', serif;
+  font-family: "Playfair Display", "Georgia", serif;
   /* Fonte serifada elegante */
   font-style: italic;
   font-weight: 400;
-  background: linear-gradient(135deg, var(--primaria) 0%, var(--secundaria) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primaria) 0%,
+    var(--secundaria) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -118,7 +122,6 @@ a {
 .logo-header-brand:hover {
   opacity: 0.85;
 }
-
 
 /* 2. ESTILO EXCLUSIVO DO RODAPÉ (FOOTER) */
 .logo-footer-brand {
@@ -137,7 +140,11 @@ a {
    3. CLASSES UTILITÁRIAS DE UI
    ========================================================================== */
 .texto-gradiente {
-  background: linear-gradient(135deg, var(--primaria) 0%, var(--secundaria) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primaria) 0%,
+    var(--secundaria) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -195,7 +202,6 @@ a {
   display: inline-block;
 }
 
-
 /* ==========================================================================
    4. HEADER & NAVBAR (FIXA COM RISCO INFERIOR GRADIENTE)
    ========================================================================== */
@@ -241,7 +247,7 @@ a {
 
 /* O Risco embaixo do nome */
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -268,7 +274,6 @@ a {
   transform: scaleX(1);
   transform-origin: left;
 }
-
 
 /* ==========================================================================
    5. HERO SECTION
@@ -369,7 +374,11 @@ a {
   left: -10%;
   width: 120%;
   height: 120%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 60%);
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.15) 0%,
+    transparent 60%
+  );
   z-index: -1;
 }
 
@@ -444,7 +453,6 @@ a {
   }
 }
 
-
 /* ==========================================================================
    6. SEÇÃO SOBRE MIM & CONHECIMENTOS STACK
    ========================================================================== */
@@ -478,7 +486,11 @@ a {
 .sobre-badge-comercial {
   display: flex;
   gap: 1rem;
-  background: linear-gradient(90deg, rgba(99, 102, 241, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(99, 102, 241, 0.05) 0%,
+    rgba(124, 58, 237, 0.05) 100%
+  );
   border: 1px solid var(--vidro-borda);
   padding: 1.25rem;
   border-radius: var(--radius-sm);
@@ -557,7 +569,6 @@ a {
   color: var(--texto-mutado);
   line-height: 1.5;
 }
-
 
 /* ==========================================================================
    7. SEÇÃO HABILIDADES & TECNOLOGIAS (GRELHA COMPLETA)
@@ -679,7 +690,6 @@ a {
   background: rgba(168, 85, 247, 0.05);
 }
 
-
 /* ==========================================================================
    8. SEÇÃO: COMO POSSO AJUDAR (SERVIÇOS)
    ========================================================================== */
@@ -786,7 +796,6 @@ a {
   transform: scale(1.05);
 }
 
-
 /* ==========================================================================
    9. SEÇÃO: CONTADORES & MÉTRICAS (MINDSET TECH - LADO A LADO CORRIGIDO)
    ========================================================================== */
@@ -816,7 +825,7 @@ a {
 }
 
 .metrica-item:not(:last-child)::after {
-  content: '';
+  content: "";
   position: absolute;
   right: -0.75rem;
   top: 25%;
@@ -829,7 +838,11 @@ a {
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 800;
   letter-spacing: -1px;
-  background: linear-gradient(135deg, var(--primaria) 0%, var(--secundaria) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primaria) 0%,
+    var(--secundaria) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   flex-shrink: 0;
@@ -843,7 +856,6 @@ a {
   text-align: left;
   max-width: 140px;
 }
-
 
 /* ==========================================================================
    10. SEÇÃO: MEUS COMPROMISSOS & DIFERENCIAIS
@@ -935,7 +947,6 @@ a {
   border-left-color: var(--primaria);
   padding-left: 1.75rem;
 }
-
 
 /* ==========================================================================
    11. SEÇÃO: DEPOIMENTOS (TESTIMONIALS - 3 COLUNAS)
@@ -1060,7 +1071,6 @@ a {
   transform: translateY(-4px);
 }
 
-
 /* ==========================================================================
    12. SEÇÃO CTA (CALL TO ACTION)
    ========================================================================== */
@@ -1071,7 +1081,11 @@ a {
 
 .cta-box-wrapper {
   position: relative;
-  background: radial-gradient(115% 140% at 0% 0%, rgba(99, 102, 241, 0.1) 0%, rgba(10, 15, 30, 0.7) 100%);
+  background: radial-gradient(
+    115% 140% at 0% 0%,
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(10, 15, 30, 0.7) 100%
+  );
   border: 1px solid var(--vidro-borda);
   padding: 5rem 3rem;
   border-radius: var(--radius-md);
@@ -1087,7 +1101,11 @@ a {
   transform: translate(-50%, -50%);
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.15) 0%,
+    transparent 70%
+  );
   z-index: 1;
   pointer-events: none;
 }
@@ -1131,7 +1149,6 @@ a {
   gap: 1.5rem;
   align-items: center;
 }
-
 
 /* ==========================================================================
    13. COMPONENTES: BOTÕES, BADGES & EXTRAS
@@ -1212,7 +1229,6 @@ a {
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
   }
 }
-
 
 /* ==========================================================================
    14. LAYOUT: FOOTER CORPORATIVO PREMIUM
@@ -1579,7 +1595,7 @@ a {
 
   .ferramentas-grid-cards {
     grid-template-columns: repeat(2, 1fr);
-    padding: 1.5rem
+    padding: 1.5rem;
   }
 }
 
@@ -1678,10 +1694,370 @@ a {
 }
 
 .stack-card {
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .stack-card:hover {
   transform: translateX(4px);
   border-color: rgba(168, 85, 247, 0.2) !important;
+}
+
+/* ==========================================================================
+   CONTAINER DA SEÇÃO DO PROJETO (UI PRINCIPAL)
+   ========================================================================== */
+.featured-project-section {
+  width: 100%;
+  padding: 80px 0; /* Aumentamos um pouco o respiro vertical para dar destaque */
+  background: radial-gradient(
+    circle at 85% 30%,
+    rgba(168, 85, 247, 0.04) 0%,
+    transparent 60-px
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  display: flex;
+  justify-content: center;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* --- LADO ESQUERDO: CONTEÚDO E TEXTOS --- */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-badge {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  letter-spacing: 0.5px;
+}
+
+.project-title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -1.5px;
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+.project-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.project-tags span {
+  background: #111827;
+  color: #e2e8f0;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- NOVO ESTILO DO BOTÃO (CALL TO ACTION) --- */
+.btn-track-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #a855f7;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+  position: relative; /* Necessário para posicionar o brilho dentro dele */
+  overflow: hidden; /* Esconde o brilho quando ele sai das bordas */
+}
+
+.btn-track-project:hover {
+  background: #b55fe6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(168, 85, 247, 0.5);
+}
+
+.btn-track-project svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-track-project:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* --- CAIXA DE STATUS REVISADA --- */
+.project-status-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  background: #38bdf8; /* Azul claro para indicar planejamento/construção ativa */
+  border-radius: 50%;
+  box-shadow: 0 0 12px #38bdf8;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.status-text {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   LADO DIREITO: EFEITO INTERATIVO 3D COM RENDER DE IMAGEM
+   ========================================================================== */
+.project-visual-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@keyframes neonGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.12;
+    filter: blur(80px);
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.18;
+    filter: blur(95px);
+  }
+}
+
+.project-visual-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: rgba(168, 85, 247, 0.4); /* Roxo um pouco mais vivo */
+  border-radius: 50%;
+  z-index: 1;
+  animation: neonGlow 4s ease-in-out infinite; /* Pulsação suave */
+}
+
+.perspective-container {
+  perspective: 1500px;
+  width: 100%;
+  max-width: 520px;
+  z-index: 2;
+}
+
+/* Interação Premium: Quando o mouse passa no notebook, a imagem ganha 100% de nitidez e brilho */
+.perspective-container:hover .screen-screenshot {
+  filter: blur(0px) brightness(1) contrast(1);
+}
+
+.computer-mockup-3d {
+  position: relative;
+  transform: rotateY(-22deg) rotateX(12deg) rotateZ(3deg);
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.perspective-container:hover .computer-mockup-3d {
+  transform: rotateY(-6deg) rotateX(6deg) rotateZ(0deg) scale(1.04);
+}
+
+.screen-frame {
+  background: #16161a;
+  border: 12px solid #09090b;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-top-bar {
+  background: #0f0f12;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.window-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.window-buttons span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.btn-close {
+  background: #ef4444;
+}
+.btn-minimize {
+  background: #f59e0b;
+}
+.btn-expand {
+  background: #10b981;
+}
+
+.window-url {
+  background: rgba(255, 255, 255, 0.04);
+  color: #64748b;
+  font-size: 0.75rem;
+  padding: 4px 24px;
+  border-radius: 6px;
+  flex-grow: 1;
+  text-align: center;
+  max-width: 260px;
+  letter-spacing: 0.3px;
+}
+
+/* IMAGEM DO SITE (MOCKUP 3D ADAPTÁVEL) */
+.screen-screenshot {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background-color: #0c0e12;
+
+  /* Diminuímos o blur para apenas 1px: o site fica super visível, */
+  /* mas ganha uma atmosfera cinematográfica e elegante de "foco" */
+  filter: blur(1px) brightness(0.85) contrast(1);
+
+  /* Transição ultra suave */
+  transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base tridimensional do Notebook */
+.computer-base {
+  height: 14px;
+  background: #27272a;
+  border-radius: 0 0 20px 20px;
+  border-bottom: 5px solid #141416;
+  position: relative;
+  transform: rotateX(40deg);
+  transform-origin: top;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================================================== */
+@media (max-width: 968px) {
+  .project-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .project-content {
+    align-items: center;
+  }
+
+  .project-title {
+    font-size: 2.8rem;
+  }
+
+  .project-badge,
+  .project-tags,
+  .project-status-box,
+  .btn-track-project {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  .computer-mockup-3d {
+    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+
+  .perspective-container:hover .computer-mockup-3d {
+    transform: scale(1.02);
+  }
+}
+
+/* --- EFEITO DE REFLEXO (SHIMMER) DO BOTÃO --- */
+.btn-shimmer-effect {
+  position: absolute;
+  top: 0;
+  left: -150%; /* Começa completamente escondido à esquerda */
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    /* Linha de luz branca sutil */ rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(
+    -20deg
+  ); /* Inclina a linha de luz para dar sensação de reflexo */
+  animation: buttonShimmer 4s infinite linear; /* Repete o efeito a cada 4 segundos */
+}
+
+/* Animação que move a luz por dentro do botão */
+@keyframes buttonShimmer {
+  0% {
+    left: -150%;
+  }
+  30%,
+  100% {
+    left: 150%; /* Passa pelo botão rápido e aguarda o resto do loop fora dele */
+  }
 }

@@ -1,142 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minha Trajetória & Experiências | Airam D' Avilla</title>
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/blogs.css" />
     <link rel="icon" type="image/png" href="./assets/icone_portfolio.png" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header class="header-global" id="navbar-global">
-        <div class="nav-container container">
-            <div class="nav-logo">
-                <a href="/index.html" class="logo-header-brand">
-                    Airam <span class="sobrenome-italico">D' Avilla</span>
-                </a>
-            </div>
-
-            <nav class="nav-menu" id="nav-menu">
-                <a href="/index.html" class="nav-link">Início</a>
-                <a href="/src/pages/projetos.html" class="nav-link">Projetos</a>
-                <a href="/src/pages/blogs.html" class="nav-link active">Experiências</a>
-                <a href="/src/pages/contato.html" class="btn-nav">Contato</a>
-            </nav>
+      <div class="nav-container container">
+        <div class="nav-logo">
+          <a href="/index.html" class="logo-header-brand">
+            Airam <span class="sobrenome-italico">D' Avilla</span>
+          </a>
         </div>
+
+        <nav class="nav-menu" id="nav-menu">
+          <a href="/index.html" class="nav-link">Início</a>
+          <a href="/src/pages/projetos.html" class="nav-link">Projetos</a>
+          <a href="/src/pages/blogs.html" class="nav-link active"
+            >Experiências</a
+          >
+          <a href="/src/pages/contato.html" class="btn-nav">Contato</a>
+        </nav>
+      </div>
     </header>
 
     <main id="content-main" class="main-blogs">
-        <div class="container">
+      <div class="container">
+        <section class="blogs-intro">
+          <span class="subtitulo-global">
+            <span class="linha-decorativa"></span> Jornada & Evolução
+          </span>
+          <h1 class="blogs-titulo-principal">
+            Linha do Tempo <br />
+            <span class="texto-gradiente">Acadêmica & Profissional</span>
+          </h1>
+          <p class="blogs-descricao-página">
+            Uma exibição cronológica das minhas vivências práticas no SENAI,
+            marcos de aprendizado e desenvolvimento de projetos inteligentes.
+          </p>
+        </section>
 
-            <section class="blogs-intro">
-                <span class="subtitulo-global">
-                    <span class="linha-decorativa"></span> Jornada & Evolução
-                </span>
-                <h1 class="blogs-titulo-principal">
-                    Linha do Tempo <br />
-                    <span class="texto-gradiente">Acadêmica & Profissional</span>
-                </h1>
-                <p class="blogs-descricao-página">
-                    Uma exibição cronológica das minhas vivências práticas no SENAI, marcos de aprendizado e
-                    desenvolvimento de projetos inteligentes.
-                </p>
-            </section>
+        <!-- --------------------------------------------------------------------------
+   ESTRUTURA REFORMULADA: TIMELINE HORIZONTAL EM SLIDES
+   -------------------------------------------------------------------------- */ -->
+        <section class="timeline-section">
+          <!-- Botões de Controle da Apresentação -->
+          <div class="timeline-controls">
+            <button class="btn-timeline-nav btn-prev" aria-label="Voltar marco">
+              ← Anterior
+            </button>
+            <button
+              class="btn-timeline-nav btn-next"
+              aria-label="Avançar marco"
+            >
+              Avançar →
+            </button>
+          </div>
 
-            <section class="timeline-section">
-                <div class="timeline-container">
-
-                    <div class="timeline-item">
-                        <div class="timeline-node">
-                            <div class="node-dot"></div>
-                        </div>
-
-                        <article class="blog-card">
-                            <div class="blog-card-header">
-                                <span class="blog-badge-tag">Atividade Extracurricular</span>
-                                <div class="blog-meta">
-                                    <span>Maio, 2026</span>
-                                    <span class="blog-separador">•</span>
-                                    <span class="empresa-destaque">SENAI</span>
-                                </div>
-                            </div>
-
-                            <div class="blog-info">
-                                <h3>Hackathon Agrotech 2025</h3>
-                                <p class="blog-texto-desc">
-                                    Um relato sobre a minha primeira experiência em um Hackathon e a grande conquista do
-                                    Segundo Lugar.
-                                </p>
-                                <div
-                                    style="margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem;">
-                                    <a href="blog1.html" class="btn-projeto-link demo"
-                                        style="color: var(--secundaria); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem;">
-                                        Ler relato completo <span class="seta-link">→</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+          <!-- Janela de visualização dos slides (Carrossel) -->
+          <div class="timeline-slider-window">
+            <div class="timeline-container-horizontal">
+              <!-- ITEM 1: HACKATHON AGROTECH -->
+              <div class="timeline-item-horizontal active">
+                <div class="timeline-node-horizontal">
+                  <div class="node-dot-horizontal"></div>
                 </div>
-            </section>
+                <article class="blog-card">
+                  <div class="blog-card-header">
+                    <span class="blog-badge-tag"
+                      >Atividade Extracurricular</span
+                    >
+                    <div class="blog-meta">
+                      <span>Maio, 2026</span>
+                      <span class="blog-separador">•</span>
+                      <span class="empresa-destaque">SENAI</span>
+                    </div>
+                  </div>
+                  <div class="blog-info">
+                    <h3>Hackathon Agrotech 2025</h3>
+                    <p class="blog-texto-desc">
+                      Um relato sobre a minha primeira experiência em um
+                      Hackathon e a grande conquista do Segundo Lugar.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn-premium-atividades"
+                      style="
+                        margin-top: 1.5rem;
+                        padding: 0.75rem 1.5rem;
+                        font-size: 0.85rem;
+                      "
+                    >
+                      Ler relato completo <span class="seta-animada">→</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
 
-        </div>
+              <!-- ITEM 2: CONSTRUINDO O TRAMPOPAY -->
+              <div class="timeline-item-horizontal">
+                <div class="timeline-node-horizontal">
+                  <div class="node-dot-horizontal"></div>
+                </div>
+                <article class="blog-card">
+                  <div class="blog-card-header">
+                    <span class="blog-badge-tag">Diário de Bordo 🛠️</span>
+                    <div class="blog-meta">
+                      <span>Julho, 2026</span>
+                      <span class="blog-separador">•</span>
+                      <span class="empresa-destaque">Autoral / SENAI</span>
+                    </div>
+                  </div>
+                  <div class="blog-info">
+                    <h3>
+                      Construindo o TrampoPay: O Início da Arquitetura Back-End
+                    </h3>
+                    <p class="blog-texto-desc">
+                      Documentando os primeiros passos do ecossistema financeiro
+                      para prestadores de serviços. Um registro transparente
+                      sobre os desafios de modelar o banco de dados SQL
+                      estruturado e criar as primeiras rotas de API com Node.js
+                      no padrão RESTful.
+                    </p>
+                    <a
+                      href="blog_TrampoPay.html"
+                      class="btn-premium-atividades"
+                      style="
+                        margin-top: 1.5rem;
+                        padding: 0.75rem 1.5rem;
+                        font-size: 0.85rem;
+                      "
+                    >
+                      Ler diário completo <span class="seta-animada">→</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer class="footer-global">
-        <div class="footer-container container">
-
-            <div class="footer-bloco footer-sobre">
-                <div class="footer-logo">
-                    <a href="#navbar-global" class="logo-footer-brand">
-                        Airam <span class="texto-gradiente">.dev</span>
-                    </a>
-                </div>
-                <p class="footer-descricao">
-                    Desenvolvendo soluções modernas, unindo a precisão do Back-end com a fluidez do Front-end.
-                </p>
-                <div class="footer-status-badge">
-                    <span class="status-ponto"></span> Focando no 3º Semestre • SENAI
-                </div>
-            </div>
-
-            <div class="footer-bloco footer-links">
-                <h4>Navegação</h4>
-                <nav class="footer-nav">
-                    <a href="../../index.html">Minha Jornada</a>
-                    <a href="../../index.html">Habilidades</a>
-                    <a href="../../index.html">Como Posso Ajudar</a>
-                    <a href="../../index.html">Depoimentos</a>
-                </nav>
-            </div>
-
-            <div class="footer-bloco footer-redes">
-                <h4>Conecte-se comigo</h4>
-                <p class="footer-sub-texto">Vamos construir algo incrível juntos?</p>
-                <div class="footer-sociais">
-                    <a href="https://github.com/Airam-D" target="_blank" aria-label="GitHub" class="social-icon">
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
-                        <span>LinkedIn</span>
-                    </a>
-                </div>
-            </div>
-
+      <div class="footer-container container">
+        <div class="footer-bloco footer-sobre">
+          <div class="footer-logo">
+            <a href="#navbar-global" class="logo-footer-brand">
+              Airam <span class="texto-gradiente">.dev</span>
+            </a>
+          </div>
+          <p class="footer-descricao">
+            Desenvolvendo soluções modernas, unindo a precisão do Back-end com a
+            fluidez do Front-end.
+          </p>
+          <div class="footer-status-badge">
+            <span class="status-ponto"></span> Focando no 3º Semestre • SENAI
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="container footer-bottom-flex">
-                <p class="copyright">&copy; 2026 Airam D' Avilla. Todos os direitos reservados.</p>
-                <p class="feito-com">Feito com 💜 & Código Limpo</p>
-            </div>
+        <div class="footer-bloco footer-links">
+          <h4>Navegação</h4>
+          <nav class="footer-nav">
+            <a href="../../index.html">Minha Jornada</a>
+            <a href="../../index.html">Habilidades</a>
+            <a href="../../index.html">Como Posso Ajudar</a>
+            <a href="../../index.html">Depoimentos</a>
+          </nav>
         </div>
+
+        <div class="footer-bloco footer-redes">
+          <h4>Conecte-se comigo</h4>
+          <p class="footer-sub-texto">Vamos construir algo incrível juntos?</p>
+          <div class="footer-sociais">
+            <a
+              href="https://github.com/Airam-D"
+              target="_blank"
+              aria-label="GitHub"
+              class="social-icon"
+            >
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              aria-label="LinkedIn"
+              class="social-icon"
+            >
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-flex">
+          <p class="copyright">
+            &copy; 2026 Airam D' Avilla. Todos os direitos reservados.
+          </p>
+          <p class="feito-com">Feito com 💜 & Código Limpo</p>
+        </div>
+      </div>
     </footer>
 
     <script src="../scripts/main.js"></script>
-</body>
-
+  </body>
 </html>

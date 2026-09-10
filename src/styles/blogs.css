@@ -1,297 +1,338 @@
 /* ==========================================================================
-   PÁGINA DE TRAJETÓRIA: TIMELINE DESIGN SYSTEM (UI DE ALTO PADRÃO)
+   PÁGINA DE TRAJETÓRIA: TIMELINE HORIZONTAL DESIGN SYSTEM (SLIDER PREMIUM)
    ========================================================================== */
 
 .main-blogs {
-    padding-top: 140px;
-    padding-bottom: 8rem;
-    background: radial-gradient(circle at 50% -20%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+  padding-top: 140px;
+  padding-bottom: 8rem;
+  background: radial-gradient(
+    circle at 50% -20%,
+    rgba(168, 85, 247, 0.05) 0%,
+    transparent 50%
+  );
 }
 
 .blogs-intro {
-    max-width: 800px;
-    margin-bottom: 5rem;
-    text-align: left;
+  max-width: 800px;
+  margin-bottom: 5rem;
+  text-align: left;
 }
 
 .blogs-titulo-principal {
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -2px;
-    color: var(--texto-principal);
-    margin: 1.5rem 0;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -2px;
+  color: var(--texto-principal);
+  margin: 1.5rem 0;
 }
 
 .blogs-descricao-página {
-    font-size: 1.15rem;
-    color: var(--texto-mutado);
-    line-height: 1.7;
-    max-width: 650px;
+  font-size: 1.15rem;
+  color: var(--texto-mutado);
+  line-height: 1.7;
+  max-width: 650px;
 }
 
 /* --------------------------------------------------------------------------
-   ESTRUTURA NATIVA DA LINHA DO TEMPO (TIMELINE)
+   ESTRUTURA DA LINHA DO TEMPO HORIZONTAL (SLIDES DE APRESENTAÇÃO)
    -------------------------------------------------------------------------- */
 .timeline-section {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    /* Alinhamento centralizado luxuoso */
-    margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: visible;
 }
 
-/* A Linha Vertical Guia (Espinha dorsal da timeline igual ao print) */
-.timeline-container {
-    position: relative;
-    padding-left: 45px;
-    /* Espaço para a linha e os nós respirarem */
+/* Janela de máscara que esconde os cards que estão fora do foco */
+.timeline-slider-window {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0 40px;
 }
 
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    width: 2px;
-    height: calc(100% - 20px);
-    background: linear-gradient(to bottom, rgba(168, 85, 247, 0.4) 0%, rgba(99, 102, 241, 0.1) 100%);
+/* Esteira linear que se desloca no eixo X via JavaScript */
+.timeline-container-horizontal {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+  position: relative;
 }
 
-/* Container de cada linha de registro */
-.timeline-item {
-    position: relative;
-    margin-bottom: 3.5rem;
-    /* Espaço generoso entre os marcos temporais */
+/* A Linha Guia Horizontal contínua que conecta os marcos cronológicos */
+.timeline-container-horizontal::before {
+  content: "";
+  position: absolute;
+  top: 26px; /* Alinhamento exato com o centro do nó luminoso */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(168, 85, 247, 0.6) 0%,
+    rgba(99, 102, 241, 0.2) 100%
+  );
+  z-index: 1;
 }
 
-.timeline-item:last-child {
-    margin-bottom: 0;
+/* Configuração de largura total para cada slide de registro */
+.timeline-item-horizontal {
+  min-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.25; /* Esmaecimento elegante para itens fora de foco */
+  transform: scale(0.96);
+  transition: var(--transicao);
 }
 
-/* O Nó / Marcador da Timeline */
-.timeline-node {
-    position: absolute;
-    top: 28px;
-    /* Alinhamento perfeito com o centro do header do card */
-    left: -45px;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
+/* Destaque máximo de nitidez e escala para o marco ativo na tela */
+.timeline-item-horizontal.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
-/* O círculo interno luminoso */
-.node-dot {
-    width: 12px;
-    height: 12px;
-    background: var(--bg-principal);
-    border: 3px solid var(--secundaria);
-    border-radius: 50%;
-    transition: var(--transicao);
-    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15);
+/* Área do indicador temporal acima do card */
+.timeline-node-horizontal {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 35px; /* Alinhado de forma simétrica com a borda do card */
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 5;
 }
 
-/* Microinteração: Quando o card recebe hover, a bolinha da timeline acende! */
-.timeline-item:hover .node-dot {
-    background: var(--secundaria);
-    transform: scale(1.2);
-    box-shadow: 0 0 15px var(--secundaria);
+.node-dot-horizontal {
+  width: 14px;
+  height: 14px;
+  background: var(--bg-principal);
+  border: 3px solid var(--secundaria);
+  border-radius: 50%;
+  transition: var(--transicao);
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.2);
+}
+
+/* Feedback visual de iluminação quando o slide torna-se o ativo */
+.timeline-item-horizontal.active .node-dot-horizontal {
+  background: var(--secundaria);
+  transform: scale(1.2);
+  box-shadow: 0 0 15px var(--secundaria);
 }
 
 /* --------------------------------------------------------------------------
-   O CARD DE CONTEÚDO (ESTILIZADO PARA A TIMELINE)
+   BOTÕES DE CONTROLE DA LINHA DO TEMPO
+   -------------------------------------------------------------------------- */
+.timeline-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-timeline-nav {
+  background: var(--vidro-bg);
+  border: 1px solid var(--vidro-borda);
+  color: var(--texto-principal);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: var(--transicao);
+}
+
+.btn-timeline-nav:hover:not(:disabled) {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: var(--secundaria);
+  transform: translateY(-2px);
+}
+
+/* Estado bloqueado caso não existam mais registros para avançar ou retroceder */
+.btn-timeline-nav:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   O CARD DE CONTEÚDO (GLASSMORPHISM ADAPTADO)
    -------------------------------------------------------------------------- */
 .blog-card {
-    position: relative;
-    background: rgba(11, 15, 25, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: var(--transicao);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  background: rgba(11, 15, 25, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transicao);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
 }
 
 .blog-card:hover {
-    transform: translateX(6px);
-    /* Em vez de subir, ele desliza suavemente para o lado acompanhando a linha! */
-    border-color: rgba(168, 85, 247, 0.25);
-    background: rgba(11, 15, 25, 0.6);
-    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+  border-color: rgba(168, 85, 247, 0.25);
+  background: rgba(11, 15, 25, 0.6);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
 }
 
-/* Header interno do Card */
 .blog-card-header {
-    padding: 2rem 2.5rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+  padding: 2rem 2.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .blog-badge-tag {
-    background: rgba(168, 85, 247, 0.08);
-    border: 1px solid rgba(168, 85, 247, 0.15);
-    color: var(--secundaria);
-    padding: 0.35rem 0.8rem;
-    border-radius: var(--radius-sm);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  color: var(--secundaria);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .blog-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    color: var(--texto-mutado);
-    font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--texto-mutado);
+  font-weight: 600;
 }
 
 .empresa-destaque {
-    color: var(--texto-principal);
+  color: var(--texto-principal);
 }
 
 .blog-separador {
-    color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.08);
 }
 
-/* Informações do Corpo do Card */
 .blog-info {
-    padding: 1.5rem 2.5rem 2.5rem;
+  padding: 1.5rem 2.5rem 2.5rem;
 }
 
 .blog-info h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 0.85rem;
-    color: var(--texto-principal);
-    letter-spacing: -0.4px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.85rem;
+  color: var(--texto-principal);
+  letter-spacing: -0.4px;
 }
 
 .blog-texto-desc {
-    color: var(--texto-mutado);
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
-
-/* ==========================================================================
-   EFEITO SCROLL REVEAL DINÂMICO (ANIMAÇÃO AO ROLAR)
-   ========================================================================== */
-
-/* Estado Inicial: Oculto e deslocado para baixo */
-.timeline-item {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    will-change: opacity, transform;
-    /* Otimização de hardware do navegador */
-}
-
-/* Estado Ativo: Totalmente visível na posição original */
-.timeline-item.visible {
-    opacity: 1;
-    transform: translateY(0);
+  color: var(--texto-mutado);
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 /* ==========================================================================
    ESTILOS EXCLUSIVOS PARA A PÁGINA INTERNA DE LEITURA (CONTEÚDO REAL SENAI)
    ========================================================================== */
-
 .main-leitura-artigo {
-    background: radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.04) 0%, transparent 60%);
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(168, 85, 247, 0.04) 0%,
+    transparent 60%
+  );
 }
 
 .article-container {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 140px 2rem 8rem;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 140px 2rem 8rem;
 }
 
 .btn-voltar {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    color: var(--texto-mutado);
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 3rem;
-    transition: var(--transicao);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--texto-mutado);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 3rem;
+  transition: var(--transicao);
 }
 
 .btn-voltar:hover {
-    color: var(--secundaria);
-    transform: translateX(-5px);
+  color: var(--secundaria);
+  transform: translateX(-5px);
 }
 
 .btn-voltar svg {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .article-header {
-    margin-bottom: 3.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 2.5rem;
 }
 
 .article-tag {
-    background: rgba(168, 85, 247, 0.08);
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    color: var(--secundaria);
-    padding: 0.4rem 0.9rem;
-    border-radius: var(--radius-sm);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: var(--secundaria);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .article-titulo {
-    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
-    font-weight: 800;
-    line-height: 1.25;
-    color: var(--texto-principal);
-    letter-spacing: -1.5px;
-    margin: 1.8rem 0 1.2rem;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--texto-principal);
+  letter-spacing: -1.5px;
+  margin: 1.8rem 0 1.2rem;
 }
 
 .article-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.9rem;
-    color: var(--texto-mutado);
-    font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--texto-mutado);
+  font-weight: 500;
 }
 
 .article-separador {
-    color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.1);
 }
 
 .article-body {
-    font-size: 1.125rem;
-    line-height: 1.85;
-    color: rgba(243, 244, 246, 0.95);
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: rgba(243, 244, 246, 0.95);
 }
 
 .article-body p {
-    margin-bottom: 2.2rem;
+  margin-bottom: 2.2rem;
 }
 
 .article-body h2 {
-    font-size: 1.65rem;
-    font-weight: 700;
-    color: var(--texto-principal);
-    margin: 3.5rem 0 1.2rem;
-    letter-spacing: -0.5px;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  margin: 3.5rem 0 1.2rem;
+  letter-spacing: -0.5px;
 }

@@ -1581,6 +1581,16 @@ a {
 }
 
 @media (max-width: 480px) {
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .btn-track-project {
+    width: 100%; /* Faz o botão ocupar a largura total, ficando muito mais anatômico para o polegar */
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+
   .hero-ctas {
     flex-direction: column;
     width: 100%;
@@ -2018,35 +2028,97 @@ a {
    RESPONSIVIDADE (MOBILE)
    ========================================================================== */
 @media (max-width: 968px) {
-  .project-container {
-    grid-template-columns: 1fr;
-    gap: 50px;
-    text-align: center;
+  /* Força o card a ocupar quase toda a largura, sem margens exageradas escondendo o conteúdo */
+  .featured-project-section .project-card-wrapper {
+    padding: 30px 16px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: var(--radius-md) !important;
   }
 
-  .project-content {
-    align-items: center;
+  /* Desfaz o grid de duas colunas e força o empilhamento vertical limpo */
+  .featured-project-section .project-container {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    gap: 35px !important;
+    width: 100% !important;
+    text-align: center !important;
   }
 
-  .project-title {
-    font-size: 2.8rem;
+  /* Força o alinhamento de todos os blocos internos ao centro */
+  .featured-project-section .project-content {
+    align-items: center !important;
+    width: 100% !important;
   }
 
-  .project-badge,
-  .project-tags,
-  .project-status-box,
-  .btn-track-project {
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
+  /* Controla o tamanho do título para não estourar a viewport do celular */
+  .featured-project-section .project-title {
+    font-size: 2.2rem !important;
+    letter-spacing: -1px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 15px !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    color: var(--texto-principal) !important;
   }
 
-  .computer-mockup-3d {
-    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  /* Ajusta o texto descritivo para não ficar espremido */
+  .featured-project-section .project-description {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: var(--texto-mutado) !important;
   }
 
-  .perspective-container:hover .computer-mockup-3d {
-    transform: scale(1.02);
+  /* Alinha as tags no centro e permite que elas quebrem linha perfeitamente */
+  .featured-project-section .project-tags {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+
+  /* 🛠️ CORREÇÃO CRÍTICA DO BOTÃO: Impede que ele seja cortado ou esmagado lateralmente */
+  .featured-project-section .btn-track-project {
+    display: inline-flex !important;
+    width: 100% !important; /* Faz o botão ocupar a largura total disponível no card */
+    max-width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 14px 20px !important;
+    font-size: 0.95rem !important;
+    white-space: normal !important; /* Permite que o texto quebre linha internamente se o celular for muito pequeno */
+    margin: 0 auto 25px auto !important;
+  }
+
+  /* Garante que a caixa de status ocupe toda a largura de forma limpa */
+  .featured-project-section .project-status-box {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 16px !important;
+  }
+
+  .featured-project-section .status-text {
+    font-size: 0.85rem !important;
+    text-align: left !important;
+  }
+
+  /* Reseta os efeitos de perspectiva e rotação 3D para telas mobile */
+  .featured-project-section .computer-mockup-3d {
+    transform: none !important;
+  }
+
+  .featured-project-section .perspective-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    transform: none !important;
+  }
+
+  /* Remove o blur da imagem no mobile para melhor renderização */
+  .featured-project-section .screen-screenshot {
+    filter: none !important;
   }
 }
 
